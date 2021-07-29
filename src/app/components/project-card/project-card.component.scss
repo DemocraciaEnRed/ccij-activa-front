@@ -1,0 +1,61 @@
+@import '../../../theme/variables.scss';
+
+.project-card {
+    background-color: $blanco;
+    margin-top: 5px;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.07), 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    min-height: 250px;
+
+    .col-img, .col-txt {
+        @media (min-width: 768px) {
+            height: 300px !important;
+        }
+    }
+
+    .col-img {
+        padding: 0px !important;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        border-radius: 20px 20px 0px 0px;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        min-height: 100px;
+        /*background-position: left;
+        min-height: 100px;
+        background-size: 110px;
+        @media (min-width: $width-medium) {
+          background-position: top center;
+          background-size: 200px;
+          border-radius: 20px 0px 0px 20px;
+        }*/
+        &.center-img {
+          background-position: center;
+          background-size: cover;
+          min-height: 300px;
+        }
+        .project-title {
+            position: relative;
+            font-family: $basker;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 32px;
+            color: #881dfd;
+            background-color: white;
+            margin: auto;
+            padding: 0 10px;
+            @media (min-width: $width-medium) {
+              font-size: 26px;
+            }
+        }
+    }
+
+    .project-description {
+        height: calc(100% - 34px);
+        @include font-size-media-medium(14px, 16px);
+        line-height: 1.2em;
+        /* En src/theme/general-classes.scss están los estilos de los títulos (línea 16) */
+    }
+}

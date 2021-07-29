@@ -1,0 +1,126 @@
+<div class="politician-card">
+    <div class="card-image-container">
+        <img [src]="imgUrl" class="card-img-top" alt="{{politician.first_name + ' ' + politician.last_name || '...'}}">
+    </div>
+    <div class="card-body {{stance}}">
+      <ng-template [ngIf]="!_project.es_debate">
+          <span class="postura px-4 py-1">{{stance_postura}}</span>
+      </ng-template>
+        <span class="title mt-2">{{politician.first_name}} {{politician.last_name}}</span>
+        <span class="subtitle">{{politician.position && politician.position.name}}</span>
+        <span class="subtitle">{{politician.party.name}}</span>
+        <div class="button-container mt-auto px-4">
+            <button *ngIf="politician.twitter" type="button" class="contact-button" (click)="openTwitterWindow()">
+                <i class="fab fa-twitter"></i>&emsp;Twittear
+            </button>
+            <button *ngIf="politician.facebook" type="button" class="contact-button" (click)="generateRandomMessage()" data-toggle="modal" [attr.data-target]="'#facebookModal' + politician.id">
+                <i class="fab fa-facebook-f"></i>&emsp;Facebook
+            </button>
+            <button *ngIf="politician.instagram" type="button" class="contact-button" (click)="generateRandomMessage()" data-toggle="modal" [attr.data-target]="'#instagramModal' + politician.id">
+                <i class="fab fa-instagram"></i>&emsp;Instagram
+            </button>
+            <button *ngIf="politician.phone" type="button" class="contact-button" data-toggle="modal" (click)="generateRandomMessage()" [attr.data-target]="'#callModal' + politician.id">
+                <i class="fas fa-phone"></i>&emsp;Llamar
+            </button>
+            <button *ngIf="politician.phone" type="button" class="contact-button" data-toggle="modal" (click)="generateRandomMessage()" [attr.data-target]="'#whatsappModal' + politician.id">
+                <i class="fab fa-whatsapp"></i>&emsp;Enviar mensaje
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Facebook -->
+<div class="modal fade" id="facebookModal{{politician.id}}" tabindex="-1" role="dialog" aria-labelledby="Escribir por Facebook" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div>
+                    Te dejamos una sugerencia de texto para escribirle. Puedes escribirle un mensaje privado o escribirle en el muro (lo que prefieras): <br>
+                    <div class="example-message py-2 px-3 my-4">{{randomMessage}}</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" (click)="openFacebookWindow()" class="btn btn-primary btn-aec btn-center"><i class="fab fa-facebook-f"></i>&emsp;Ir a su Facebook</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal Instagram -->
+<div class="modal fade" id="instagramModal{{politician.id}}" tabindex="-1" role="dialog" aria-labelledby="Escribir por Instagram" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div>
+                    Te dejamos una sugerencia de texto para escribirle. Puedes escribirle un mensaje privado o escribirle en el muro (lo que prefieras): <br>
+                    <div class="example-message py-2 px-3 my-4">{{randomMessage}}</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" (click)="openInstagramWindow()" class="btn btn-primary btn-aec btn-center"><i class="fab fa-instagram"></i>&emsp;Ir a su Instagram</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal LLamada -->
+<div class="modal fade" id="callModal{{politician.id}}" tabindex="-1" role="dialog" aria-labelledby="Llamar" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                <div>
+                    Puedes probar llamarlo al siguiente número: <br>
+                    <div class="example-message py-2 px-3 my-4">{{politician.phone}}</div>
+                    <br>Te dejamos una idea para que te inspires: <br>
+                    <div class="example-message py-2 px-3 my-4">{{randomMessage}}</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a (click)="tallyUp()" href="tel:{{politician.phone}}" class="btn btn-primary btn-aec btn-center">Llamar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal LLamada -->
+<div class="modal fade" id="whatsappModal{{politician.id}}" tabindex="-1" role="dialog" aria-labelledby="Llamar" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                <div>
+                    <p>¡Hacé clic en el botón y vas a poder enviarle un mensaje por Whatsapp!</p>
+                    <p>Podes comenzar la charla con este mensaje:</p>
+                    <div class="example-message py-2 px-3 my-4">{{randomMessage}}</div>
+                    <p>¡No te preocupes, vas a poder editar o agregar más texto al mensaje antes de mandarlo!</p>
+                </div>
+                <p><a (click)="tallyUp()" href="https://wa.me/{{politician.phone.replace('+','').replace(' ', '')}}?text={{encode(randomMessage)}}" target="_blank" class="btn btn-primary btn-aec btn-center">Abrir Whatsapp <i class="fab fa-whatsapp"></i></a><p>
+            <p><a (click)="toggleWhatsappHelp()" class="text-primary text-bold" style="cursor: pointer;">Ver como funciona <i class="fas fa-angle-down"></i></a></p>
+            <div class="text-center" *ngIf="showWhatsappHelp">
+                    <p>Cuando aprietes el boton de "Abrir Whatsapp" se abrira la siguiente pantalla en tu navegador (Tanto movil como en PC)</p>
+            <img src="../../assets/images/whatsapp3.jpg" width="350"  class="img-thumbnail mb-3 img-fluid">
+                    <p>Al hacer clic en "Continuar al chat" pueden pasar 2 cosas: Si esta en un movil, abrirá whatsapp (Si lo tenes instalado). Si estas en tu PC y no tienes instalado WhatsApp Desktop, verás las siguiente pantalla.</p>
+            <img src="../../assets/images/whatsapp2.jpg" width="350"  class="img-thumbnail mb-3 img-fluid">
+                    <p>Podes elegir instalar WhatsApp Desktop haciendo clic en "Descargar" o abrir Whatsapp Web haciendo clic en el link "usar Whatsapp Web" </p>
+                    <p>¡Y listo! ¡Ya estarias listo para enviar tu mensaje! Vas a poder editarlo cuando abras la app!</p>
+            <img src="../../assets/images/whatsapp1.jpg" width="350"  class="img-thumbnail mb-3 img-fluid">
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
