@@ -19,14 +19,21 @@ import { ProjectLinkComponent } from './components/project-link/project-link.com
 
 import { MainModule } from './pages/main/main.module';
 import { HttpModule } from '@angular/http';
+import { HttpClient} from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { ProjectViewModule } from './pages/project-view/project-view.module';
 import { ComponentsModule } from './components/components.module';
 import { FullListModule } from './pages/full-list/full-list.module';
 import { AppRoutes } from './helpers/routes.helper';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 //import 'angular-carousel';
 import * as angularCarousel from "angular-carousel";
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -47,7 +54,14 @@ import * as angularCarousel from "angular-carousel";
     FormsModule,
     HttpModule,
     ProjectViewModule,
-    FullListModule
+    FullListModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     HttpService,
