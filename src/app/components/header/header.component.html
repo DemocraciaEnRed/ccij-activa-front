@@ -1,29 +1,50 @@
-<header>
+<header >
 
-  <div class="nav">
-    <a routerLink="/" class="nav-aec-link">Inicio</a> <span class="mx-3">|</span>
-    <a  class="nav-aec-link"  href="/#proyectos">Causas</a> <span class="mx-3 d-none d-md-inline">|</span><br class="d-md-none" />
-    <a  class="nav-aec-link" data-toggle="modal" data-target="#modalFAQ">Preguntas frecuentes</a><span class="mx-3">|</span>
-    <a  class="nav-aec-link" data-toggle="modal" data-target="#modalContacto">Contacto</a><!--<span class="mx-3">|</span>-->
+  <div class="row nav">
+    <a routerLink="/" class="nav-aec-link">Home</a> <span class="mx-3">|</span>
+    <a  class="nav-aec-link"  href="/#proyectos">Campañas</a> <span class="mx-3 d-none d-md-inline">|</span><br class="d-md-none" />
+    <a  class="nav-aec-link" data-toggle="modal" data-target="#modalFAQ">FAQs</a><span class="mx-3">|</span>
+    <a  class="nav-aec-link" data-toggle="modal" data-target="#modalFAQ">Nuestro trabajo</a><span class="mx-3">|</span>
+    <a  class="nav-aec-link" data-toggle="modal" data-target="#modalContacto">Contactar CCIJ</a><!--<span class="mx-3">|</span>-->
     <!--<a target="_blank" class="nav-aec-link" href="https://causascomunes.com/">CausasComunes.org</a>-->
 
   </div>
-  <button class="btn-desk " onclick="location.href='https://somosmuchas.org/'">Somos Muchas</button>
-  <button class="btn-mobile " onclick="location.href='https://somosmuchas.org/'">SM</button>
+  <button class="btn-desk " onclick="location.href='https://somosmuchas.org/'">CCIJ</button>
 
-  <!--<a routerLink="/"><img class="logo-img" src="../../../assets/images/logo.png"></a>-->
+  <!-- <a routerLink="/"><img class="logo-img" src="../../../assets/images/logo.png"></a> -->
+  <div class="container">
+    <div class="row ">
+      <div class="col-6  "><img class="img-fluid" src="../../../assets/images/logo-oscuro.png" ></div>
+      <div class="col-6 column-header container-logo">  
+        <div class="row">
+          <div class="col-12 title">
+            <a routerLink="/"><div class="title"> Campañas de liberación accessibles a la comunidad</div></a>
 
+          </div>
+      </div>
+      <div class="row ">
+          <div class="col-8">
+                <img src="../../../assets/images/CCIJ-Logo .png" class="img-fluid" alt="logo ccij">
+            </div>
+          <div class="col-4">
+              <button>Ver sitio</button>
+          </div>
+      </div>  
+      
+      </div>
+  
+    </div>
+  </div>
 
   <br/>
-
-  <a routerLink="/"><div class="title"> {{ 'HEADER.TITLE' | translate }} </div></a>
-
-  <br/>
-
-  <div class="subtitle">{{ 'HEADER.SUBTITLE' | translate }}</div>
-
+  <button class="btn-mobile " onclick="location.href='https://somosmuchas.org/'">CCIJ</button>
+ 
 </header>
 
+<br/>
+
+<div class="subtitle">"No estoy aceptando las cosas que no puedo cambiar, estoy cambiando las cosas que no puedo aceptar."
+  <br />- Angela Davis</div>
 
 <div class="modal fade" id="modalFAQ" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">

@@ -1,5 +1,5 @@
 body {
-    font-family: $lato;
+    font-family: $raleway;
     background-color: #fdfdfd;
 }
 
@@ -76,7 +76,7 @@ h6 {
 
 .navbar-light {
     background-color: $gris !important;
-    font-family: $lato !important;
+    font-family: $raleway !important;
 }
 
 .navbar-dark {
@@ -120,7 +120,7 @@ a:hover {
     border: 0px;
     border-radius: 0px;
     background-color: $gris;
-    font-family: $lato;
+    font-family: $raleway;
 }
 
 .modal-header,
@@ -133,7 +133,7 @@ a:hover {
     border-radius: 0px !important;
     background-color: black;
     border: 0px;
-    font-family: $lato;
+    font-family: $raleway;
     margin: 5px;
 }
 
@@ -154,7 +154,7 @@ a:hover {
 }
 
 .info-text {
-    font-family: $lato;
+    font-family: $raleway;
     color: $negro;
     @include font-size-text();
 }
@@ -263,7 +263,7 @@ slider .video-container:last-child iframe {
 
 footer {
     h5 {
-        font-family: $lato;
+        font-family: $raleway;
         font-weight: 500;
         font-size: 16px;
         color: $gris-oscuro;
@@ -304,7 +304,7 @@ footer {
 
 /*################# NUEVAS ############*/
 .bg-azul-claro{
-  background-color: $azul-claro;
+  background-color: $azul-claro2;
 }
 .bg-mosaico-blanco{  
     background-image: url(../assets/images/mosaico-iconos-causas-blanco.svg);

@@ -57,7 +57,7 @@
 .title {
     display: block;
     text-align: left;
-    font-family: $lato;
+    font-family: $raleway;
     font-size: 18px;
     font-weight: 600;
     color: #474747;
@@ -67,7 +67,7 @@
 .subtitle {
     display: block;
     text-align: left;
-    font-family: $lato;
+    font-family: $raleway;
     font-size: 14px;
     color: #696969;
 }
@@ -75,7 +75,7 @@
 .contact-button {
     width: 100%;
     background: transparent;
-    font-family: $lato;
+    font-family: $raleway;
     color: $azul-oscuro;
     margin-top: 5px;
     border-radius: 30px;
@@ -109,7 +109,7 @@
     border: 1px solid #666666;
     background: #f3f3f3;
     @include font-size-media-medium(16px, 20px);
-    font-family: $lato;
+    font-family: $raleway;
     font-style: italic;
 }
 
