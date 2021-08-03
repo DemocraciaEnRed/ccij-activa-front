@@ -3,6 +3,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ProjectService } from './services/project.service';
 import { Project } from './model/project';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -16,27 +17,40 @@ export class AppComponent {
   public newsletterMessage: string;
   public projectList: Array<Project>;
   public submitted = false;
-
+  public supportedLangs: Array<string>;
+  public defaultLang : string  = 'en';
+  public currentLang : string;
   constructor(
     private httpService: HttpService,
     private projectService: ProjectService,
+    public translate: TranslateService,
     public fb: FormBuilder) {
-    this.formGroup = fb.group({
-        email: ['', Validators.compose([Validators.email, Validators.required])],
-        project: ['']
-    });
-    this.projectService
-        .getAll()
-        .then(response => {
-            let rProjectList = []
-            let excludeProjects = ['debate-presidencial', 'derechos-en-juego', 'acuerdo-social-anticorrupcion'];
-            response.forEach(function(project) {
-              if (excludeProjects.indexOf(project.slug) == -1)
-                rProjectList.push(project)
-            });
-            this.projectList = rProjectList;
-        });
-  }
+
+      this.supportedLangs = ['en', 'es'];
+
+      translate.addLangs(this.supportedLangs);
+      translate.setDefaultLang(this.defaultLang);
+
+      const browserLang = translate.getBrowserLang();
+      this.currentLang = browserLang.match(/en|es/) ? browserLang : 'en'
+      translate.use(this.currentLang);
+      
+      this.formGroup = fb.group({
+          email: ['', Validators.compose([Validators.email, Validators.required])],
+          project: ['']
+      });
+      this.projectService
+          .getAll()
+          .then(response => {
+              let rProjectList = []
+              let excludeProjects = ['debate-presidencial', 'derechos-en-juego', 'acuerdo-social-anticorrupcion'];
+              response.forEach(function(project) {
+                if (excludeProjects.indexOf(project.slug) == -1)
+                  rProjectList.push(project)
+              });
+              this.projectList = rProjectList;
+          });
+    }
 
   navBarTogglerIsVisible() {
     return this.navbarToggler.nativeElement.offsetParent !== null;
@@ -46,6 +60,11 @@ export class AppComponent {
     if (this.navBarTogglerIsVisible()) {
       this.navbarToggler.nativeElement.click();
     }
+  }
+
+  public changeLang(lang: string){
+    console.log(lang);
+    this.translate.use(lang);
   }
 
   public submitNewsletter() {
