@@ -2,29 +2,33 @@
 
 header {
     width: 100%;
-    background-color: $azul-oscuro;
+    padding: 0px;
     // background-image: url(../../../assets/images/banner-home.png);
     // background-position: left 149px ;
     // background-size: contain;
     // background-repeat: no-repeat;
-    height: 324px;
 }
 
 
 header .row{
     margin: 0px;
+    
+}
+
+.bg-head{
+    background-color: $azul-oscuro;
+
 }
 .column-header{
     
-    max-height: 400px;
+    // max-height: auto;
     width: 100%;
-
 }
-.column-header img{
-    object-fit: cover;
-    max-width: 500px; 
-    max-height: inherit;
-}
+// .column-header img{
+//     object-fit: cover;
+//     max-width: 500px; 
+//     // max-height: inherit;
+// }
 .nav {
     padding-top: 5px;
     @media (min-width: $width-medium) {
@@ -57,7 +61,7 @@ header .row{
 .container-logo{
     background-color: $blanco;
     margin: 0px;
-    width: 100;
+    width: 100%;
 }
 .logo-img {
     display: block;
@@ -183,3 +187,8 @@ header .row{
         visibility: hidden;
     }
   }   
+
+  .s-pad-mar{
+      margin-bottom: 0px;
+      padding-right: 0px;
+  }
