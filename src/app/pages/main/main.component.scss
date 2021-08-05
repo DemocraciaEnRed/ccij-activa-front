@@ -42,9 +42,9 @@
     .flickity-prev-next-button.previous {
         left: -10px;
     }
-    .flickity-viewport{
+    //.flickity-viewport{
       //height: 330px !important;
-    }
+    //}
 }
 
 .banner-home{
@@ -56,4 +56,16 @@
       font-size: 20px;
     }
   }
+}
+.dialog-triangle {
+    content: '';
+    position: relative;
+    top: -10px;
+    left: 49%;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid $azul-claro2;
+    clear: both;
 }

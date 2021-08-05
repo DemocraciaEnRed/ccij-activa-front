@@ -2,5 +2,18 @@
   "HEADER": {
     "TITLE": "CCIJ - Español",
     "SUBTITLE": "'No estoy aceptando las cosas que no puedo cambiar, estoy cambiando las cosas que no puedo aceptar.' \n - Angela Davis"
+  },
+  "HOME": {
+    
+  },
+  "MAIN": {
+    "TITLE": "Una plataforma que reúne, impulsa y potencia los llamados a la acción de nuestra comunidad para ponerle fin a la detención migratoria mientras elevamos las voces de migrantes previamente y actualmente detenidos por la migra.",
+    "HIGNLIGHTED":{
+      "INSTRCTIONS": "Cuando hagas click en los botones que están debajo de lxs congresistas vas a poder contactarte directamente con ellxs y pedirles que apoyen nuestras causas (o decirles lo que quieras). Más abajo podés encontrar más información nuestras causas comunes. La agenda electoral la definimos nosotres. Sumate."
+    },
+    "PROJECTS": {
+      "TITLE": "Conocé nuestras campañas",
+      "SUBTITLE": "Ingresa a cada una de las campañas para obtener más información y activar a lxs congresistas."
+    }
   }
 }

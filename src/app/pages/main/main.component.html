@@ -1,7 +1,7 @@
 <div class="container text-center mt-3 p-4 banner-home bg-azul-claro">
   <div class="col-12 col-md-10 offset-md-1">
     <!-- <h1></h1> -->
-    <h2>Una plataforma que reúne, impulsa y potencia los llamados a la acción de nuestra comunidad para ponerle fin a la detención migratoria mientras elevamos las voces de migrantes previamente y actualmente detenidos por la migra. </h2>
+    <h2>{{ 'MAIN.TITLE' | translate }}</h2>
   </div>
 </div>
 
@@ -43,7 +43,7 @@
         <div class="row uso-strip-home">
             <div class="col">
                 <div>
-                    <div class="desc-text">Cuando hagas click en los botones que están debajo de lxs congresistas vas a poder contactarte directamente con ellxs y pedirles que apoyen nuestras causas (o decirles lo que quieras). Más abajo podés encontrar más información nuestras causas comunes. La agenda electoral la definimos nosotres. Sumate.</div>
+                    <div class="desc-text">{{'MAIN.HIGHLIGHTED.INSTRUCTIONS' | translate}}</div>
                 </div>
             </div>
         </div>
@@ -54,14 +54,10 @@
 </div>
 
 <div id="proyectos" class="w-100 bg-mosaico-blanco">
+    <h1 class="title text-center bg-azul-claro p-4">{{'MAIN.PROJECTS.TITLE' | translate}}</h1>
+    <div class="dialog-triangle"></div>
     <div class="container">
         <!-- Proyectos -->
-        <div class="row">
-            <div class="col py-4 text-center text-md-left">
-                <h2 class="title">Conocé nuestras campañas</h2>
-                <h4 class="subtitle">Ingresa a cada una de las campañas para obtener más información y activar a lxs congresistas.</h4>
-            </div>
-        </div>
         <div class="row">
             <div class="col col-12 mb-4">
                 <ng-template [ngIf]="!isMobileView">

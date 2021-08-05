@@ -63,7 +63,6 @@ export class AppComponent {
   }
 
   public changeLang(lang: string){
-    console.log(lang);
     this.translate.use(lang);
   }
 
