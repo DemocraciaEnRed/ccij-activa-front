@@ -8,6 +8,7 @@ h4 {
     
   span{
     font-weight: 600;
+    color: $azul-oscuro;
   }
   
   .megafono-derecha, .megafono-izquierda{
@@ -35,6 +36,6 @@ h4 {
         bottom: -4px;
         height: 3px;
         content: " ";
-        background: $violeta-claro;
+        background: $azul-oscuro;
     }
 }
