@@ -1,6 +1,6 @@
 <div class="politician-card">
     <div class="card-image-container">
-        <img [src]="imgUrl" class="card-img-top" alt="{{politician.first_name + ' ' + politician.last_name || '...'}}">
+        <img [src]="imgUrl" class=" img-fluid img-thumbnail card-img-top " alt="{{politician.first_name + ' ' + politician.last_name || '...'}}">
     </div>
     <div class="card-body {{stance}}">
       <ng-template [ngIf]="!_project.es_debate">
@@ -23,7 +23,8 @@
                 <i class="fas fa-phone"></i>&emsp;Llamar
             </button> -->
             <button *ngIf="politician.phone" type="button" class=" btn-rectangular" data-toggle="modal" (click)="generateRandomMessage()" [attr.data-target]="'#whatsappModal' + politician.id">
-                <i class="fab fa-whatsapp"></i>&emsp;Enviar mensaje
+                <!-- <i class="fab fa-whatsapp"></i>&emsp; -->
+                Enviar mensaje
             </button>
         </div>
     </div>
