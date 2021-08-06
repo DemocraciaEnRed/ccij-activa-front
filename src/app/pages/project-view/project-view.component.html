@@ -1,3 +1,9 @@
+<div class="container text-center mt-3 p-4 banner-home bg-blanco">
+  <div class="col-12 col-md-10 offset-md-1">
+    <!-- <h1></h1> -->
+    <h5 class="h5 .font-weight-normal">Tu voz es muy importante para generar impacto, elegí cómo querés ayudar y sumate. ¿qué estás esperando? (se podria poner 1 oracion mas con alo de info)</h5>
+  </div>
+</div>
 <!-- Título -->
 <div class="bg-mosaico-blanco">
   <div class="container">
@@ -7,16 +13,28 @@
   </div>
 </div>
 
+
 <!-- Videos -->
 <div class="w-100 bg-mosaico-blanco" [hidden]="(currentProject.show_videos == 0 || currentProject.videos.length < 1) && currentProject.show_text == 0">
     <video-slider [hidden]="(currentProject.show_videos == 0 || currentProject.videos.length < 1)" [project]="currentProject"></video-slider>
 </div>
 
+<div class="container-fluid text-center mt-3 p-4 banner-home bg-azul-claro">
+  <div class="col-12 col-md-10 offset-md-1">
+    <h2 class="h2">¡Elegí el medio de comunicación que prefieras y activá la campaña!
+    </h2>
+  </div>
+  </div>
 <!-- Politicxs -->
 <div class="bg-mosaico-blanco">
   <politician-slider [politiciansList]="politiciansListSlider" [project]="currentProject"></politician-slider>
 </div>
-
+<div class="container-fluid text-center mt-3 p-4 banner-home bg-azul-claro">
+  <div class="col-12 col-md-10 offset-md-1">
+    <h2 class="h2">Conocé más acerca de la detención de inmigrantes y salud pública
+    </h2>
+  </div>
+  </div>
 <!-- Descripcion -->
 <div class="bg-mosaico-blanco pb-5">
   <div class="container">

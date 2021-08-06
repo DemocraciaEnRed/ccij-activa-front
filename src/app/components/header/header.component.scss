@@ -24,11 +24,12 @@ header .row{
     // max-height: auto;
     width: 100%;
 }
-// .column-header img{
-//     object-fit: cover;
-//     max-width: 500px; 
-//     // max-height: inherit;
-// }
+
+.bottom-aligned {
+    display: flex;
+    align-items: flex-end;
+}
+
 .nav {
     padding-top: 5px;
     @media (min-width: $width-medium) {
@@ -37,8 +38,8 @@ header .row{
     width: 100%;
     display:inline-block;
     text-align: center;
-    color: $blanco;
-    background-color: $blanco-o;
+    color: $azul-oscuro;
+    background-color: $blanco;
     font-family: $raleway;
     @include font-size-media-medium(18px, 20px);
     font-weight: normal;
@@ -56,7 +57,8 @@ header .row{
 .nav-aec-link:hover {
     cursor: pointer;
     text-decoration: none!important;
-    border-bottom: 4px solid $blanco;
+    // border-bottom: 4px solid $azul-oscuro;
+    color: $celeste;
 }
 .container-logo{
     background-color: $blanco;
@@ -76,17 +78,23 @@ header .row{
     text-align: left;
     color: $azul-oscuro;
     font-family: $raleway;
+    font-size: 32px;
     font-style: normal;
-    font-weight: bold;
-    font-size: 36px;
+    font-weight: 700;
     line-height: 35px;
-    margin-top: 0px;
+    letter-spacing: 0em;
+    text-align: left;
+
     margin-bottom: 0px;
     @media (min-width: $width-medium) {
       margin-top: 0px;
     }
-    font-weight: 600;
-    @include font-size-media-medium(20px, 50px);
+    @media (min-width: $width-small) {
+        margin-top: 0px;
+        @include font-size-media-medium(1.2em, 1.5em);
+
+      }
+    @include font-size-media-medium(1em, 1.5em);
 }
 
 .subtitle {
@@ -125,7 +133,7 @@ header .row{
 }
 
 .btn-desk {
-    border: 2px solid #881dfd;
+    border: 2px solid $azul-claro;
     border-radius: 30px;
     background-color: #ffffff;
     box-shadow: 0 3px 6px 0 rgba(126, 5, 163, 0.16);

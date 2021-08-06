@@ -10,7 +10,7 @@
         <span class="subtitle">{{politician.position && politician.position.name}}</span>
         <span class="subtitle">{{politician.party.name}}</span>
         <div class="button-container mt-auto px-4">
-            <button *ngIf="politician.twitter" type="button" class="contact-button" (click)="openTwitterWindow()">
+            <!-- <button *ngIf="politician.twitter" type="button" class="contact-button" (click)="openTwitterWindow()">
                 <i class="fab fa-twitter"></i>&emsp;Twittear
             </button>
             <button *ngIf="politician.facebook" type="button" class="contact-button" (click)="generateRandomMessage()" data-toggle="modal" [attr.data-target]="'#facebookModal' + politician.id">
@@ -21,8 +21,8 @@
             </button>
             <button *ngIf="politician.phone" type="button" class="contact-button" data-toggle="modal" (click)="generateRandomMessage()" [attr.data-target]="'#callModal' + politician.id">
                 <i class="fas fa-phone"></i>&emsp;Llamar
-            </button>
-            <button *ngIf="politician.phone" type="button" class="contact-button" data-toggle="modal" (click)="generateRandomMessage()" [attr.data-target]="'#whatsappModal' + politician.id">
+            </button> -->
+            <button *ngIf="politician.phone" type="button" class=" btn-rectangular" data-toggle="modal" (click)="generateRandomMessage()" [attr.data-target]="'#whatsappModal' + politician.id">
                 <i class="fab fa-whatsapp"></i>&emsp;Enviar mensaje
             </button>
         </div>
