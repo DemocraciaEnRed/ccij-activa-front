@@ -142,7 +142,6 @@ export class PropuestaSliderComponent implements OnInit, OnChanges {
             break;
         }//endswitch
 
-        console.log(this.propuestas.length, this.propuestas[0][1])
         if (true || this.propuestas.length && this.propuestas[0][1].indexOf('<li>') != -1){
           for (var i = 0; i<this.propuestas.length; i++)
             this.propuestas[i][1] = this.propuestas[i][1].replace('<li>', '<li class="punteo-li">')

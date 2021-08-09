@@ -18,7 +18,6 @@ export class ProjectViewComponent implements OnInit {
     public projectDescription: SafeHtml;
     public politiciansList = new Array<Politician>();
     public politiciansListSlider = new Array<Politician>();
-
     public sanitizeHtml(html: string): any {
         return this.sanitizer.bypassSecurityTrustHtml(html);
     }

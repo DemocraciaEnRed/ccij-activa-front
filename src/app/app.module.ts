@@ -21,12 +21,16 @@ import { MainModule } from './pages/main/main.module';
 import { HttpModule } from '@angular/http';
 import { HttpClient} from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
-import { ProjectViewModule } from './pages/project-view/project-view.module';
 import { ComponentsModule } from './components/components.module';
 import { FullListModule } from './pages/full-list/full-list.module';
 import { AppRoutes } from './helpers/routes.helper';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+
+import { ProjectViewComponent } from './pages/project-view/project-view.component';
+import { VideoSliderComponent } from './components/video-slider/video-slider.component';
+import { PropuestaSliderComponent } from './components/propuesta-slider/propuesta-slider.component';
+import { ArticleComponent } from './components/article/article.component';
 
 //import 'angular-carousel';
 import * as angularCarousel from "angular-carousel";
@@ -39,7 +43,11 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [
     AppComponent,
     ProjectLinkComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProjectViewComponent,
+    VideoSliderComponent,
+    PropuestaSliderComponent,
+    ArticleComponent
   ],
   imports: [
     ComponentsModule,
@@ -53,7 +61,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     MainModule,
     FormsModule,
     HttpModule,
-    ProjectViewModule,
     FullListModule,
     TranslateModule.forRoot({
       loader: {
