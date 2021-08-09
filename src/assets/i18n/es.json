@@ -14,6 +14,9 @@
     "PROJECTS": {
       "TITLE": "Conocé nuestras campañas",
       "SUBTITLE": "Ingresa a cada una de las campañas para obtener más información y activar a lxs congresistas."
+    },
+    "PROJECT":{
+      "BUTTON": "Participa"
     }
   }
 }
