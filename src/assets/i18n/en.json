@@ -27,6 +27,11 @@
     }
   },
   "PROJECT":{
-    "TITLE": "HOLA"
+    "TITLE": "HOLA",
+    "STATIC": {
+      "VOICE": "Your voice is very important to generate impact, choose how you want to help and join. What are you waiting for? (You could put 1 more sentence with the info)",
+      "COMUNICATION": "Choose the communication medium of your choice and activate the campaign!",
+      "KNOW": "Learn more about immigration detention and public health"
+    }
   }
 }
