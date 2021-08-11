@@ -2,7 +2,6 @@ import { HttpService } from './services/http.service';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ProjectService } from './services/project.service';
 import { Project } from './model/project';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {TranslateService} from '@ngx-translate/core';
 
 @Component({
@@ -13,20 +12,15 @@ import {TranslateService} from '@ngx-translate/core';
 export class AppComponent {
 
   @ViewChild('navbarToggler') navbarToggler:ElementRef;
-
-  public projectList: Array<Project>;
   public submitted = false;
-  public supportedLangs: Array<string>;
   public defaultLang : string  = 'en';
   public currentLang : string;
+  public supportedLangs : Array<string> = ['en', 'es'];
+
   constructor(
-    private httpService: HttpService,
-    private projectService: ProjectService,
     public translate: TranslateService,
-    public fb: FormBuilder) {
-
-      this.supportedLangs = ['en', 'es'];
-
+    public projectService: ProjectService
+    ) {
       translate.addLangs(this.supportedLangs);
       translate.setDefaultLang(this.defaultLang);
 
@@ -34,7 +28,6 @@ export class AppComponent {
       this.currentLang = browserLang.match(/en|es/) ? browserLang : 'en'
       translate.use(this.currentLang);
       
-     
     }
 
   navBarTogglerIsVisible() {
@@ -46,7 +39,6 @@ export class AppComponent {
       this.navbarToggler.nativeElement.click();
     }
   }
-
   public changeLang(lang: string){
     this.translate.use(lang);
   }
