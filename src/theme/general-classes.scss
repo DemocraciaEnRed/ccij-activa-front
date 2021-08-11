@@ -288,12 +288,12 @@ footer {
         font-size: 14px;
         display: block;
         margin: 6px 0;
-        color: #881dfd;
+        color: white;
         cursor: pointer;
         text-decoration: underline;
         &:hover,
         &:focus {
-            color: #116fbf;
+            color: #A7BEE2;
         }
     }
 }
@@ -319,6 +319,9 @@ footer {
 /*################# NUEVAS ############*/
 .bg-azul-claro{
   background-color: $azul-claro2;
+}
+.bg-azul-oscuro{
+    background-color: $azul-oscuro;
 }
 .bg-mosaico-blanco{  
     background-image: url(../assets/images/mosaico-iconos-causas-blanco.svg);
