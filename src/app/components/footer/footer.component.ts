@@ -1,19 +1,38 @@
 import { Component } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ProjectService } from "../../services/project.service";
+import { Project } from '../../model/project';
 
 @Component({
     selector: 'app-footer',
-    templateUrl: './footer.component.html'
+    templateUrl: './footer.component.html',
+    styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
     newsletterMessage : String
     public formGroup: FormGroup;
     submitted : boolean = false
-    constructor(fb: FormBuilder){
+    projectList: Array<Project>;
+    constructor(public fb: FormBuilder, public projectService: ProjectService){
+      
       this.formGroup = fb.group({
         email: ['', Validators.compose([Validators.email, Validators.required])],
         project: ['']
-    });
+      });
+
+      this.projectService
+      .getAll()
+      .then(response => {
+          let rProjectList = []
+          let excludeProjects = ['debate-presidencial', 'derechos-en-juego', 'acuerdo-social-anticorrupcion'];
+          response.forEach(function(project) {
+            if (excludeProjects.indexOf(project.slug) == -1)
+              rProjectList.push(project)
+          });
+          this.projectList = rProjectList;
+      });
+
+
     }
     public submitNewsletter() {
         this.newsletterMessage = '';

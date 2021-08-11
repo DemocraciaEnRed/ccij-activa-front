@@ -1,7 +1,4 @@
-import { HttpService } from './services/http.service';
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { ProjectService } from './services/project.service';
-import { Project } from './model/project';
 import {TranslateService} from '@ngx-translate/core';
 
 @Component({
@@ -19,7 +16,6 @@ export class AppComponent {
 
   constructor(
     public translate: TranslateService,
-    public projectService: ProjectService
     ) {
       translate.addLangs(this.supportedLangs);
       translate.setDefaultLang(this.defaultLang);
