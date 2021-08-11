@@ -24,6 +24,10 @@
     },
     "PROJECT_CARD":{
       "BUTTON": "Participa"
+    },
+    "ALL_PROJECTS": "VER TODAS LAS CAMPAÑAS",
+    "CORE_VALUES": {
+      "TITLE": "We use coordination, advocacy, and legal services to fight for the liberation of immigrants in detention"
     }
   },
   "PROJECT":{

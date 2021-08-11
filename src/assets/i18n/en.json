@@ -10,20 +10,22 @@
       "CONTACT": "Contact CCIJ"
     }
   },
-  "HOME": {
-    
-  },
+  "HOME": {},
   "MAIN": {
     "TITLE": "Una plataforma que reúne, impulsa y potencia los llamados a la acción de nuestra comunidad para ponerle fin a la detención migratoria mientras elevamos las voces de migrantes previamente y actualmente detenidos por la migra.",
     "HIGNLIGHTED":{
       "INSTRCTIONS": "Cuando hagas click en los botones que están debajo de lxs congresistas vas a poder contactarte directamente con ellxs y pedirles que apoyen nuestras causas (o decirles lo que quieras). Más abajo podés encontrar más información nuestras causas comunes. La agenda electoral la definimos nosotres. Sumate."
     },
     "PROJECTS": {
-      "TITLE": "Conocé nuestras campañas",
+      "TITLE": "Know our campaings",
       "SUBTITLE": "Ingresa a cada una de las campañas para obtener más información y activar a lxs congresistas."
     },
     "PROJECT_CARD":{
       "BUTTON": "Get Involved"
+    },
+    "ALL_PROJECTS": "See all campaings",
+    "CORE_VALUES": {
+      "TITLE": "We use coordination, advocacy, and legal services to fight for the liberation of immigrants in detention"
     }
   },
   "PROJECT":{

@@ -1,0 +1,60 @@
+<div class="w-100 follow-strip bg-azul-claro">
+  <div class="container py-2 py-md-5">
+      <div class="row px-2">
+          <div class="col col-12 col-md-6 col-lg-5">
+              <h4 class="follow-title mb-3">Nuestras redes</h4>
+              <a href="https://www.instagram.com/paridadya/" target="_blank" class="follow-btn"><img class="mr-1" src="../assets/images/social_instagram_icon.svg"></a>
+              <a href="https://www.facebook.com/paridadya" target="_blank" class="follow-btn f-btn"><img class="mx-1" src="../assets/images/social_facebook_icon.svg"></a>
+              <a href="https://twitter.com/paridadya5050" target="_blank" class="follow-btn"><img class="mx-1" src="../assets/images/social_twitter_icon.svg"></a>
+              <a href="mailto:organizacionartemisas@gmail.com" target="_blank" class="follow-btn"><img class="mx-1" src="../assets/images/social_mail_icon.svg" height="46px"></a>
+          </div>
+          <div class="d-md-none col-12 blank-line">
+          </div>
+          <div class="col col-12 col-md-6 col-lg-7 newsletter pl-md-5">
+              <h4 class="follow-title mb-3">Conoce más</h4>
+              <form ngNoForm [formGroup]="formGroup" [hidden]="submitted">
+                  <div class="news-container">
+                      <input type="text" placeholder="Ingresa tu email." formControlName="email" class="news-input" name="EMAIL"/>
+                      <!--<input type="hidden" formControlName="project" name="project" id="newsletter_project" />-->
+                      <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_34c72ae7cd29d3ec62b506511_3e5cb2fca9" tabindex="-1" value=""></div>
+                      <button type="button" class="btn btn-news mt-3 mt-lg-0 ml-0 ml-lg-2 d-block d-lg-inline-block" (click)="submitNewsletter()">Suscribirme</button>
+                  </div>
+                  <span class="error">{{newsletterMessage}}</span>
+              </form>
+              <h5 class="newsletter-success" [hidden]="!submitted">{{newsletterMessage}}</h5>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="bg-mosaico-blanco">
+<footer class="container pt-4">
+    <div class="row px-2">
+        <div class="d-none d-md-block col-md-2 mb-4 h-100 align-self-center">
+            <img class="final-strip-img" src="../../../assets/images/logo-artemisas.png">
+        </div>
+        <div class="d-none d-md-block col-md-2 mb-4 h-100 align-self-center">
+            <img class="mt-3 final-strip-img p-3" src="../../../assets/images/logo-friedrich.png">
+        </div>
+        <div class="col-12 col-sm-4 col-md-6 mb-4">
+            <h5>Las causas</h5>
+            <ng-template ngFor let-project [ngForOf]="projectList">
+                <project-link [project]="project"></project-link>
+            </ng-template>
+        </div>
+        <div class="col-12 col-sm-4 col-md-2 mb-4">
+            <h5>Redes</h5>
+            <a href="https://twitter.com/paridadya5050" target="_blank">Twitter</a>
+            <a href="https://www.facebook.com/paridadya" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/paridadya/" target="_blank">Instagram</a>
+        </div>
+        <div class="d-md-none col-12 mb-5 mt-3">
+            <img class="final-strip-img" src="../../../assets/images/logo-artemisas.png">
+            <img class="mt-3 final-strip-img p-3" src="../../../assets/images/logo-friedrich.png">
+        </div>
+    </div>
+</footer>
+</div>
+
+
+</div>
