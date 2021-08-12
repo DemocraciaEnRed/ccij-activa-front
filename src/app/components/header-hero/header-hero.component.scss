@@ -1,0 +1,42 @@
+@import '../../../theme/variables.scss';
+
+.bg-head{
+  background-color: $azul-oscuro;
+}
+
+.s-pad-mar{
+  margin-bottom: 0px;
+  padding-right: 0px;
+}
+.column-header{
+  // max-height: auto;
+  width: 100%;
+}
+.container-logo{
+  background-color: $blanco;
+  margin: 0px;
+  width: 100%;
+}
+.title {
+  width: 100%;
+  text-align: left;
+  color: $azul-oscuro;
+  font-family: $raleway;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  margin-bottom: 0px;
+  @media (min-width: $width-medium) {
+    margin-top: 0px;
+  }
+  @media (min-width: $width-small) {
+      margin-top: 0px;
+      @include font-size-media-medium(1.2em, 1.5em);
+
+    }
+  @include font-size-media-medium(1em, 1.5em);
+}

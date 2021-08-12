@@ -21,6 +21,7 @@ import { MainModule } from './pages/main/main.module';
 import { HttpModule } from '@angular/http';
 import { HttpClient} from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
+import { HeaderHeroComponent } from './components/header-hero/header-hero.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ComponentsModule } from './components/components.module';
 import { FullListModule } from './pages/full-list/full-list.module';
@@ -45,6 +46,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     ProjectLinkComponent,
     HeaderComponent,
+    HeaderHeroComponent,
     FooterComponent,
     ProjectViewComponent,
     VideoSliderComponent,

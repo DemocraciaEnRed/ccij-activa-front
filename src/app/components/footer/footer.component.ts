@@ -13,8 +13,7 @@ export class FooterComponent {
     public formGroup: FormGroup;
     submitted : boolean = false
     projectList: Array<Project>;
-    constructor(public fb: FormBuilder, public projectService: ProjectService){
-      
+    constructor(public fb: FormBuilder, public projectService: ProjectService){  
       this.formGroup = fb.group({
         email: ['', Validators.compose([Validators.email, Validators.required])],
         project: ['']
