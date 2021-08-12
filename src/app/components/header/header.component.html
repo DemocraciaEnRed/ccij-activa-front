@@ -1,40 +1,37 @@
-<div class="container">
-  <nav class="navbar navbar-expand-md navbar-light">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2" id="navbarSupportedContent">
-        <ul class="navbar-nav mx-auto">
-            <li class="nav-item active">
-                <a class="nav-link" routerLink="/">
-                  {{'HEADER.NAV.HOME' | translate}}
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/#proyectos">
-                  {{'HEADER.NAV.CAMPAINGS' | translate}}
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="modal" href="#" data-target="#modalFAQ">
-                  {{'HEADER.NAV.FAQS' | translate}}
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="modal" href="#" data-target="#modalFAQ">
-                  {{'HEADER.NAV.OURJOB' | translate}}
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="modal" href="#" data-target="#modalContacto">
-                  {{'HEADER.NAV.CONTACT' | translate}}
-                </a>
-            </li>
-        </ul>
-    
-    </div>
-  </nav>
-</div>
+<nav class="navbar navbar-expand-md navbar-light container">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2" id="navbarSupportedContent">
+    <ul class="navbar-nav mx-auto">
+        <li class="nav-item active">
+            <a class="nav-link" routerLink="/">
+              {{'HEADER.NAV.HOME' | translate}}
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/#proyectos">
+              {{'HEADER.NAV.CAMPAINGS' | translate}}
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="modal" href="#" data-target="#modalFAQ">
+              {{'HEADER.NAV.FAQS' | translate}}
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="modal" href="#" data-target="#modalFAQ">
+              {{'HEADER.NAV.OURJOB' | translate}}
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="modal" href="#" data-target="#modalContacto">
+              {{'HEADER.NAV.CONTACT' | translate}}
+            </a>
+        </li>
+    </ul>
+  </div>
+</nav>
 <header-hero></header-hero>
 <!--FAQ MODAL-->
 <div class="modal fade" id="modalFAQ" tabindex="-1" role="dialog">
