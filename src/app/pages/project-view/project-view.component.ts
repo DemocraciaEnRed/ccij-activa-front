@@ -6,6 +6,8 @@ import { ProjectService } from '../../services/project.service';
 import { Politician } from '../../model/politician';
 import { PoliticianService } from '../../services/politician.service';
 import { environment } from '../../../environments/environment';
+import { STRING_TYPE } from '@angular/compiler/src/output/output_ast';
+import { ProjectCardComponent } from '../../components/project-card/project-card.component';
 
 @Component({
     selector: 'project-view',
@@ -18,6 +20,13 @@ export class ProjectViewComponent implements OnInit {
     public projectDescription: SafeHtml;
     public politiciansList = new Array<Politician>();
     public politiciansListSlider = new Array<Politician>();
+    public projectImage = ''; 
+    public backgroundAux = '';
+    // public centerImg: Boolean;
+
+    public sanitizeStyle(style): any {
+        return this.sanitizer.bypassSecurityTrustStyle(style);
+    }
     public sanitizeHtml(html: string): any {
         return this.sanitizer.bypassSecurityTrustHtml(html);
     }
@@ -58,6 +67,14 @@ export class ProjectViewComponent implements OnInit {
                         $('#project-styles').html(text).data('project', p.name);
                     }*/
                     $('#newsletter_project').val(p.name).trigger('input').trigger('change');
+                    
+                    // contruimos la url de la imagen, si se quiere usar directo la imagne en un <img> usar backgroundAux
+                    this.backgroundAux =  environment.imgBase + this.currentProject.dir.replace(/\\/g, '/') + '/' + this.currentProject.image ;
+                    // const backgroundAux = 'url(' +
+                    //     environment.imgBase + this.currentProject.dir.replace(/\\/g, '/') + '/' + this.currentProject.image + ')';
+                    this.projectImage = this.sanitizeHtml(this.backgroundAux);
+
+
                     this.projectDescription = this.sanitizeHtml(p.slider_text.replace(/(http.*)[ .]/, '<a href="$1" target="_blank" rel="noopener noreferrer">LINK</a> '));
                     this.politicianService
                         .getAllByProject(p.slug, true)

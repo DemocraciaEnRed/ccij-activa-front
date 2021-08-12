@@ -28,8 +28,8 @@
   </div>
   </div>
 <!-- Politicxs -->
-<div class="bg-mosaico-blanco">
-  <politician-slider [politiciansList]="politiciansListSlider" [project]="currentProject"></politician-slider>
+<div  id='politicos' class="bg-mosaico-blanco">
+  <politician-slider  [politiciansList]="politiciansListSlider" [project]="currentProject"></politician-slider>
 </div>
 <div class="container-fluid text-center mt-3 p-4 banner-home bg-azul-claro">
   <div class="col-12 col-md-10 offset-md-1">
@@ -37,11 +37,50 @@
     </h2>
   </div>
   </div>
+  
+  <!-- Imagen del Proyecto -->
+  
+  
+<div class=" mb-3 row mx-0">
+    <div class="col-12 " >
+        <div class="project-title ">
+          <img [src]="backgroundAux" class="img-ban mb-3 row mx-0 col-12 ">
+
+        </div>
+        
+    </div>
+    
+</div>
+
+
+ <!-- <div class="project-card mb-3 row mx-0">
+    <div class="col-12 col-img " [style]='projectImage'>
+        <div class="project-title">
+{{projectImage}}
+        </div>
+    </div>
+</div> -->
+
+<!-- sobre el proyecto -->
+<div class="mb-3 row mx-0">
+  <p>          {{currentProject.text}}
+  </p>
+</div>
+
+<div class="row  mb-3 row mx-0 text-center">
+  <p class="col-12">{{'PROJECT.STATIC.HELP' | translate}}</p>
+  
+  <button  class='btn btn-primary btn-rectangular btn-aec btn-lg' type="button" tabindex="0" [routerLink]="['/proyecto', currentProject.slug]" fragment="politicos" >activar campaña</button>
+  <button type="button" class="btn btn-primary btn-aec btn-lg" [routerLink]="['/lista', currentProject.slug]">Ver más campañas &emsp;<small><i class="fas fa-chevron-right"></i></small></button>
+
+</div>  
+
+
 <!-- Descripcion -->
 <div class="bg-mosaico-blanco pb-5">
   <div class="container">
       <div class="row desc-strip">
-          <div class="desc-text" [innerHtml]="projectDescription"></div>
+          <div class="desc-text" [innerHtml]="projectDescription"></div> 
       </div>
   </div>
 </div>
