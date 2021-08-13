@@ -1,4 +1,6 @@
 @import '../../../theme/variables.scss';
+@import '../../components/project-card/project-card.component.scss';
+
 .desc-title {
     font-family: $basker;
     margin-bottom: 1.5em;
@@ -9,4 +11,17 @@
     font-family: $raleway;
     margin-top: -20px;
     @include font-size-text();
+}
+
+.img-ban {
+    margin-top: 20px;
+    max-height: 200px;
+    width: 100%;
+    object-fit: cover;
+    filter: grayscale(90%);
+}
+
+.h3{
+    font-family: $raleway;
+    color: $celeste;
 }
