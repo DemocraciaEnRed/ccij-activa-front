@@ -1,0 +1,60 @@
+<footer class="w-100 follow-strip bg-azul-oscuro">
+  <div class="container py-2 py-md-5">
+      <div class="row px-2">
+          <div class="col col-12 col-md-6 col-lg-5">
+                <h5>{{'FOOTER.NETWORKS' | translate}}</h5>
+                <ul class="redes-footer">
+                  <li>
+                    <a href="https://www.instagram.com/paridadya/" target="_blank">
+                      <img src="../../assets/images/social_instagram_icon.svg">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.facebook.com/paridadya" target="_blank">
+                      <img src="../../assets/images/social_facebook_icon.svg">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/paridadya5050" target="_blank">
+                      <img src="../../assets/images/social_twitter_icon.svg">
+                    </a>  
+                  </li>
+                  <li>
+                    <a href="mailto:organizacionartemisas@gmail.com" target="_blank">
+                      <img src="../../assets/images/social_mail_icon.svg" >
+                    </a>
+                  </li>
+                </ul>
+                
+          </div>
+          <div class="col col-12 col-md-6 ">
+            <h5>{{'FOOTER.PROJECTS' | translate}}</h5>
+            <ng-template ngFor let-project [ngForOf]="projectList">
+                <project-link [project]="project"></project-link>
+            </ng-template>
+          </div>
+          <!--
+          <div class="col col-12 col-md-6 col-lg-7 newsletter pl-md-5">
+              <h4 class="follow-title mb-3">Conoce más</h4>
+              <form ngNoForm [formGroup]="formGroup" [hidden]="submitted">
+                  <div class="news-container">
+                      <input type="text" placeholder="Ingresa tu email." formControlName="email" class="news-input" name="EMAIL"/>
+                      
+                      <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_34c72ae7cd29d3ec62b506511_3e5cb2fca9" tabindex="-1" value=""></div>
+                      <button type="button" class="btn btn-news mt-3 mt-lg-0 ml-0 ml-lg-2 d-block d-lg-inline-block" (click)="submitNewsletter()">Suscribirme</button>
+                  </div>
+                  <span class="error">{{newsletterMessage}}</span>
+              </form>
+              <h5 class="newsletter-success" [hidden]="!submitted">{{newsletterMessage}}</h5>
+          </div>
+        -->
+      </div>
+  </div>
+  <div class="w-100 bg-blanco">
+    <div class="col col-12">
+        <img class="mx-1" class="footer-logo" src="../../assets/images/ccij-logo.png">
+        <button class="btn btn-outline-dark">{{'FOOTER.VIEW_SITE' | translate}}</button>
+      </div>
+  </div>
+  
+</footer>

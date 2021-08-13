@@ -10,8 +10,11 @@
       "CONTACT": "Contactar CCIJ"
     }
   },
-  "HOME": {
-    
+  "HOME": {},
+  "FOOTER":{
+    "NETWORKS": "Nuestras redes",
+    "PROJECTS": "Nuestras campañas",
+    "VIEW_SITE": "Ver sitio"
   },
   "MAIN": {
     "TITLE": "Una plataforma que reúne, impulsa y potencia los llamados a la acción de nuestra comunidad para ponerle fin a la detención migratoria mientras elevamos las voces de migrantes previamente y actualmente detenidos por la migra.",
@@ -24,6 +27,10 @@
     },
     "PROJECT_CARD":{
       "BUTTON": "Participa"
+    },
+    "ALL_PROJECTS": "VER TODAS LAS CAMPAÑAS",
+    "CORE_VALUES": {
+      "TITLE": "We use coordination, advocacy, and legal services to fight for the liberation of immigrants in detention"
     }
   },
   "PROJECT":{

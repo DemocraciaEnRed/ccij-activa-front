@@ -1,0 +1,37 @@
+@import '../../../theme/variables.scss';
+
+.bg-head{
+  background-color: $azul-oscuro;
+}
+
+.s-pad-mar{
+  margin-bottom: 0px;
+  padding-right: 0px;
+}
+.column-header{
+  // max-height: auto;
+  width: 100%;
+}
+.container-logo{
+  background-color: $blanco;
+  margin: 0px;
+  width: 100%;
+}
+.title {
+  width: 100%;
+  text-align: left;
+  color: $azul-oscuro;
+  font-family: $raleway;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: lighter;
+  line-height: 42px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 24px;
+}
+a{
+  text-align: center;
+  position: relative;
+  top: 14px
+}

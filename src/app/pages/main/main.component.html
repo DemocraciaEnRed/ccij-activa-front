@@ -19,24 +19,6 @@
         </div>
     </div>
 
-    <!--<div class="text-center mt-3 px-4">
-      <ng-template [ngIf]="!isMobileView">
-          <iframe width="764" height="430" src="https://www.youtube.com/embed/uOoA7ZZaJ-k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </ng-template>
-      <ng-template [ngIf]="isMobileView">
-        <ng-template [ngIf]="!isIOS">
-          <iframe width="310" height="160" id="player" class="youtube-player" type="text/html" src="http://www.youtube.com/embed/uOoA7ZZaJ-k?controls=0&showinfo=0&showsearch=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </ng-template>
-        <ng-template [ngIf]="isIOS">
-          <a href="http://www.youtube.com/watch?v=uOoA7ZZaJ-k">
-            Segundo Debate Presidencial<br>
-            <img class="d-block mx-auto mt-1" src="http://img.youtube.com/vi/uOoA7ZZaJ-k/0.jpg" border="0" width="310" height="160" alt="Debate de candidatos a Jefe de Gobierno de Buenos Aires" />
-            YouTube Video
-          </a>
-        </ng-template>
-      </ng-template>
-    </div>-->
-
     <politician-slider [politiciansList]="politiciansList" [project]="highlightedProject"></politician-slider>
 
     <div class="container">
@@ -78,6 +60,41 @@
         </div>
     </div>
 </div>
+<div class="text-center bg-azul-claro p-4">
+    <button class="btn btn-outline-dark rounded-0">{{'MAIN.ALL_PROJECTS' | translate}}</button>
+</div>
+<section class="core-values container">
+    <h1 class="text-center">{{'MAIN.CORE_VALUES.TITLE' | translate}}</h1>
+    <div class="row">
+        <div class="col-sm">
+            <div class="text-center">
+                <img src="" class="rounded-circle" >
+            </div>
+            <p>Resources for other Pro Bono Legal Service providers</p>
+            <a href="#">Access Here ></a>
+        </div>
+        <div class="col-sm ">
+            <div class="text-center">
+                <img src="" class="rounded-circle">
+            </div>
+            <p>Resources for the comunity</p>
+            <a href="#">Access Here ></a>
+        </div>
+        <div class="col-sm">
+            <div class="text-center">
+                <img src="" class="rounded-circle">
+            </div>
+            
+            <p>Thank you for supporting our work!</p>
+            <a href="#">Donate Now ></a>
+        </div>
+    </div>
+    <div class="text-center know-us">
+        <h2>Conoce nuestro trabajo</h2>
+        <button class="btn btn-outline-dark">Conocenos</button>
+    </div>
+    
+</section>
 
 <!-- Contador -->
 <!--<tally [ammount]="tally"></tally>-->
