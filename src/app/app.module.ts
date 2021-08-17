@@ -17,7 +17,7 @@ import { PoliticianService } from './services/politician.service';
 import { PathLocationStrategy, LocationStrategy } from '@angular/common';
 import { ProjectLinkComponent } from './components/project-link/project-link.component';
 
-import { MainModule } from './pages/main/main.module';
+
 import { HttpModule } from '@angular/http';
 import { HttpClient} from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
@@ -30,12 +30,15 @@ import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 import { ProjectViewComponent } from './pages/project-view/project-view.component';
+import { ProjectCardComponent } from './components/project-card/project-card.component';
+import { MainComponent } from './pages/main/main.component';
 import { VideoSliderComponent } from './components/video-slider/video-slider.component';
 import { PropuestaSliderComponent } from './components/propuesta-slider/propuesta-slider.component';
 import { ArticleComponent } from './components/article/article.component';
 
 //import 'angular-carousel';
 import * as angularCarousel from "angular-carousel";
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -51,7 +54,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProjectViewComponent,
     VideoSliderComponent,
     PropuestaSliderComponent,
-    ArticleComponent
+    ArticleComponent,
+    MainComponent,
+    ProjectCardComponent
   ],
   imports: [
     ComponentsModule,
@@ -62,7 +67,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     ReactiveFormsModule,
     Ng2GoogleChartsModule,
-    MainModule,
+    //MainModule,
     FormsModule,
     HttpModule,
     FullListModule,
