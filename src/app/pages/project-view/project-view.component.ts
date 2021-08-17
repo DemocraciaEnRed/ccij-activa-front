@@ -5,13 +5,7 @@ import { Project } from '../../model/project';
 import { ProjectService } from '../../services/project.service';
 import { Politician } from '../../model/politician';
 import { PoliticianService } from '../../services/politician.service';
-<<<<<<< HEAD
-// import { environment } from '../../../environments/environment';
-=======
 import { environment } from '../../../environments/environment';
-import { STRING_TYPE } from '@angular/compiler/src/output/output_ast';
-import { ProjectCardComponent } from '../../components/project-card/project-card.component';
->>>>>>> master
 
 @Component({
     selector: 'project-view',
