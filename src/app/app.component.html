@@ -1,10 +1,6 @@
 <div style="min-height:100vh">
     <!-- Header -->
     <app-header></app-header>
-    <select (change)="changeLang($event.target.value)">
-        <option *ngFor="let lang of supportedLangs" [selected]="currentLang">{{lang}}</option>
-    </select>
-  
     <!-- Router -->
     <router-outlet id="activa"></router-outlet>
     <app-footer></app-footer>
