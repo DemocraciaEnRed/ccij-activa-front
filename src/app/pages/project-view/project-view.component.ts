@@ -5,7 +5,10 @@ import { Project } from '../../model/project';
 import { ProjectService } from '../../services/project.service';
 import { Politician } from '../../model/politician';
 import { PoliticianService } from '../../services/politician.service';
+
 import { environment } from '../../../environments/environment';
+import { STRING_TYPE } from '@angular/compiler/src/output/output_ast';
+import { ProjectCardComponent } from '../../components/project-card/project-card.component';
 
 @Component({
     selector: 'project-view',
@@ -20,8 +23,8 @@ export class ProjectViewComponent implements OnInit {
     public politiciansListSlider = new Array<Politician>();
     public projectImage = ''; 
     public backgroundAux = '';
-    // public centerImg: Boolean;
-
+    public link = `${environment.imgBase}/proyectos/${this.currentProject.slug}#description`;
+    public textLink = "leer más";
     public sanitizeStyle(style): any {
         return this.sanitizer.bypassSecurityTrustStyle(style);
     }
