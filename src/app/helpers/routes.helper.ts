@@ -7,7 +7,7 @@ import { PoliticianSliderComponent } from '../components/politician-slider/polit
 export const AppRoutes = [
     { path: '', pathMatch: 'full', component: MainComponent },
     { path: "proyecto/:id", component: ProjectViewComponent },
-    { path: "proyecto/:id", component: PoliticianSliderComponent },
+    // { path: "proyecto/:id", component: PoliticianSliderComponent },
     { path: "lista/:id", component: FullListComponent },
     { path: '**', redirectTo: '' }
 ];

@@ -23,7 +23,7 @@ export class ProjectViewComponent implements OnInit {
     public politiciansListSlider = new Array<Politician>();
     public projectImage = ''; 
     public backgroundAux = '';
-    public link = `${environment.imgBase}/proyectos/${this.currentProject.slug}#description`;
+    public link = '';
     public textLink = "leer más";
     public sanitizeStyle(style): any {
         return this.sanitizer.bypassSecurityTrustStyle(style);
@@ -31,6 +31,8 @@ export class ProjectViewComponent implements OnInit {
     public sanitizeHtml(html: string): any {
         return this.sanitizer.bypassSecurityTrustHtml(html);
     }
+
+    
 
     constructor(private route: ActivatedRoute,
         private projectService: ProjectService,
@@ -68,7 +70,7 @@ export class ProjectViewComponent implements OnInit {
                         $('#project-styles').html(text).data('project', p.name);
                     }*/
                     $('#newsletter_project').val(p.name).trigger('input').trigger('change');
-                    
+                    this.link = `/proyectos/${this.currentProject.slug}#description`;
                     // contruimos la url de la imagen, si se quiere usar directo la imagne en un <img> usar backgroundAux
                     this.backgroundAux =  environment.imgBase + this.currentProject.dir.replace(/\\/g, '/') + '/' + this.currentProject.image ;
                     // const backgroundAux = 'url(' +
@@ -95,4 +97,5 @@ export class ProjectViewComponent implements OnInit {
         });
     }
 
+    
 }
