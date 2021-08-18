@@ -1,18 +1,18 @@
 <div class="row bg-head">
   <div class="container">
     <div class="row align-content-end ">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6  s-pad-mar">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
         <img class="img-fluid" [src]="heroImg">
       </div>
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6  container-logo">  
         <div class="py-3">
-          <h1 class="title">{{title}}</h1>
+          <h1 class="title">{{title | translate}}</h1>
           <div class="row">
             <img class="card-img-left" [src]="secondaryImg">
             <div>
-              <a class='btn-rectangular' [href]="link">{{linkText}}</a>
+              <a class="btn-rectangular" [href]="link">{{linkText | translate}}</a>
             </div>
-            </div>
+          </div>
         </div> 
       </div>
     </div>

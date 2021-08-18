@@ -8,8 +8,14 @@
       "FAQS": "FAQs",
       "OURJOB": "Our job",
       "CONTACT": "Contact CCIJ",
-      "ES": "Es",
-      "EN": "En"
+      "ES": "ES",
+      "EN": "EN"
+    },
+    "HERO":{
+      "DEFAULT":{
+        "TITLE": "Campañas de liberación accessibles a la comunidad",
+        "BUTTON": "Ver sitio"
+      }
     }
   },
   "HOME": {},
