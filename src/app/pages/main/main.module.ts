@@ -8,16 +8,16 @@ import { ConfigService } from '../../services/config.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutes } from '../../helpers/routes.helper';
 import { ComponentsModule } from '../../components/components.module';
-import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+// import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClient} from '@angular/common/http';
 
 //import 'angular-carousel';
 import * as angularCarousel from "angular-carousel";
 
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
-}
+// export function HttpLoaderFactory(http: HttpClient) {
+//   return new TranslateHttpLoader(http);
+// }
 @NgModule({
     declarations: [
         MainComponent,
@@ -29,13 +29,13 @@ export function HttpLoaderFactory(http: HttpClient) {
         ComponentsModule,
         ReactiveFormsModule,
   
-        TranslateModule.forRoot({
-            loader: {
-              provide: TranslateLoader,
-              useFactory: HttpLoaderFactory,
-              deps: [HttpClient]
-            }
-          })
+        // TranslateModule.forRoot({
+        //     loader: {
+        //       provide: TranslateLoader,
+        //       useFactory: HttpLoaderFactory,
+        //       deps: [HttpClient]
+        //     }
+        //   })
         ],
     providers: [
         ProjectService,

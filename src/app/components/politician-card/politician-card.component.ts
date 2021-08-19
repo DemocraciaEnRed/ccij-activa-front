@@ -4,6 +4,8 @@ import { Project } from '../../model/project';
 import { ConfigService } from '../../services/config.service';
 import { ProjectService } from '../../services/project.service';
 import { environment } from '../../../environments/environment';
+import { TranslateService } from "@ngx-translate/core";
+
 
 @Component({
     selector: 'politician-card',
@@ -57,7 +59,7 @@ export class PoliticianCardComponent implements OnInit {
     public showWhatsappHelp: boolean;
 
     public constructor(public configService: ConfigService,
-        public projectService: ProjectService) {
+        public projectService: ProjectService,private translate: TranslateService) {
     }
 
     public ngOnInit(): void {

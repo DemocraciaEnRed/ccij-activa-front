@@ -90,9 +90,8 @@
   </div>
   <div class="row justify-content-center">
     <a class=' btn btn-primary btn-claro btn-aec btn-lg w-50  ' tabindex="0"
-      [routerLink]="['/proyecto', currentProject.slug]" fragment="politicos">activar campaña</a>
-    <button type="button" class=" btn btn-primary btn-aec btn-lg w-50 offset-md-1" [routerLink]="['/lista', currentProject.slug]">Ver más
-      campañas &emsp;<small><i class="fas fa-chevron-right"></i></small></button>
+      [routerLink]="['/proyecto', currentProject.slug]" fragment="politicos">{{'PROJECT.STATIC.B-ACTIVE' | translate}}</a>
+    <button type="button" class=" btn btn-primary btn-aec btn-lg w-50 offset-md-1" [routerLink]="['/lista', currentProject.slug]">{{'PROJECT.STATIC.MORECAMPAING' | translate}} &emsp;<small><i class="fas fa-chevron-right"></i></small></button>
 
   </div>
 
