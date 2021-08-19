@@ -5,7 +5,10 @@ import { Project } from '../../model/project';
 import { ProjectService } from '../../services/project.service';
 import { Politician } from '../../model/politician';
 import { PoliticianService } from '../../services/politician.service';
+
 import { environment } from '../../../environments/environment';
+import { STRING_TYPE } from '@angular/compiler/src/output/output_ast';
+import { ProjectCardComponent } from '../../components/project-card/project-card.component';
 
 @Component({
     selector: 'project-view',
@@ -20,14 +23,16 @@ export class ProjectViewComponent implements OnInit {
     public politiciansListSlider = new Array<Politician>();
     public projectImage = ''; 
     public backgroundAux = '';
-    // public centerImg: Boolean;
-
+    public link = '';
+    public textLink = "leer más";
     public sanitizeStyle(style): any {
         return this.sanitizer.bypassSecurityTrustStyle(style);
     }
     public sanitizeHtml(html: string): any {
         return this.sanitizer.bypassSecurityTrustHtml(html);
     }
+
+    
 
     constructor(private route: ActivatedRoute,
         private projectService: ProjectService,
@@ -65,7 +70,7 @@ export class ProjectViewComponent implements OnInit {
                         $('#project-styles').html(text).data('project', p.name);
                     }*/
                     $('#newsletter_project').val(p.name).trigger('input').trigger('change');
-                    
+                    this.link = `/proyectos/${this.currentProject.slug}#description`;
                     // contruimos la url de la imagen, si se quiere usar directo la imagne en un <img> usar backgroundAux
                     this.backgroundAux =  environment.imgBase + this.currentProject.dir.replace(/\\/g, '/') + '/' + this.currentProject.image ;
                     // const backgroundAux = 'url(' +
@@ -92,4 +97,5 @@ export class ProjectViewComponent implements OnInit {
         });
     }
 
+    
 }

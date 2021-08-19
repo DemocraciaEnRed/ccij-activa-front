@@ -47,9 +47,25 @@
       "VOICE": "Your voice is very important to generate impact, choose how you want to help and join. What are you waiting for? (You could put 1 more sentence with the info)",
       "COMUNICATION": "Choose the communication medium of your choice and activate the campaign!",
       "KNOW": "Learn more about immigration detention and public health",
-      "HELP": "Do you want to help with this campaign?"
-
+      "HELP": "Do you want to help with this campaign?",
+      "B-ACTIVE": "activate campaing",
+      "MORECAMPAING": "see more campaings"
 
     }
+  },
+  "PCARD":{
+    "BUTTON": "Send Twit"
+  },
+  "S-VIDEO": "Informative videos",
+  "S-POLITICIAN": "Contact us to activate the campaign!",
+  "VOTE":{
+    "COUNT":"El Conteo de votos",
+    "FAVOR": "in favor",
+    "AGAINST": "against",
+    "NOTCONF": "not confirmed",
+    "ABSTAINS": "abstains"
   }
+
+
+
 }
