@@ -8,12 +8,9 @@ import {TranslateService} from '@ngx-translate/core';
 })
 
 export class HeaderHeroComponent {
-    @Input() title: string = 'Campañas de liberación accessibles a la comunidad';
+    @Input() title: string = 'HEADER.HERO.DEFAULT.TITLE';
     @Input() heroImg : string = '../../../assets/images/logo-oscuro.png';
     @Input() secondaryImg : string = '../../../assets/images/ccij-logo.png';
     @Input() link: string = "#";
-    @Input() linkText : string = "Ver sitio"
-
-    
-
+    @Input() linkText : string = 'HEADER.HERO.DEFAULT.BUTTON'
 }

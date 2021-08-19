@@ -8,35 +8,7 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class AppComponent {
 
-  @ViewChild('navbarToggler') navbarToggler:ElementRef;
   public submitted = false;
-  public defaultLang : string  = 'en';
-  public currentLang : string;
-  public supportedLangs : Array<string> = ['en', 'es'];
-
-  constructor(
-    public translate: TranslateService,
-    ) {
-      translate.addLangs(this.supportedLangs);
-      translate.setDefaultLang(this.defaultLang);
-
-      const browserLang = translate.getBrowserLang();
-      this.currentLang = browserLang.match(/en|es/) ? browserLang : 'en'
-      translate.use(this.currentLang);
-      
-    }
-
-  navBarTogglerIsVisible() {
-    return this.navbarToggler.nativeElement.offsetParent !== null;
-  }
-
-  collapseNav() {
-    if (this.navBarTogglerIsVisible()) {
-      this.navbarToggler.nativeElement.click();
-    }
-  }
-  public changeLang(lang: string){
-    this.translate.use(lang);
-  }
+  
 
 }

@@ -29,6 +29,15 @@
               {{'HEADER.NAV.CONTACT' | translate}}
             </a>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="localeSelect" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{'HEADER.NAV.'+currentLang | uppercase | translate}}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="localeSelect">
+            <a class="dropdown-item" href="#" (click)="changeLang('es')">{{'HEADER.NAV.ES' | translate}}</a>
+            <a class="dropdown-item" href="#" (click)="changeLang('en')">{{'HEADER.NAV.EN' | translate}}</a>
+          </div>
+        </li>
     </ul>
   </div>
 </nav>
