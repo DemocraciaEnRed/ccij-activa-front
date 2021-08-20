@@ -59,13 +59,13 @@
   "S-VIDEO": "Informative videos",
   "S-POLITICIAN": "Contact us to activate the campaign!",
   "VOTE":{
-    "COUNT":"El Conteo de votos",
-    "FAVOR": "in favor",
-    "AGAINST": "against",
-    "NOTCONF": "not confirmed",
-    "ABSTAINS": "abstains"
-  }
-
+    "COUNT":"The vote count",
+    "FAVOR": "IN FAVOR",
+    "AGAINST": "AGAINST",
+    "NOTCONF": "NOT OCNFIRMED",
+    "ABSTAINS": "ABSTAINS"
+  },
+  "TALLY": "{{number}} messages have already been sent to support"
 
 
 }

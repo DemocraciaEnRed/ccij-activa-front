@@ -7,6 +7,14 @@ import { StatsComponent } from './stats/stats.component';
 import { PoliticianSliderComponent } from './politician-slider/politician-slider.component';
 import { SliderComponent } from './slider/slider.component';
 import { AppRoutes } from '../helpers/routes.helper';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { HttpClient} from '@angular/common/http';
+
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
     declarations: [
@@ -18,7 +26,14 @@ import { AppRoutes } from '../helpers/routes.helper';
     ],
     imports: [
         CommonModule,
-        RouterModule.forRoot(AppRoutes, { enableTracing: false })
+        RouterModule.forRoot(AppRoutes, { enableTracing: false }),
+        TranslateModule.forRoot({
+        loader: {
+            provide: TranslateLoader,
+            useFactory: HttpLoaderFactory,
+            deps: [HttpClient]
+      }
+    })
     ],
     exports: [
         TallyComponent,

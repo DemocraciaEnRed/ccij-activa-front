@@ -2,6 +2,7 @@ import { Component, Input, OnChanges } from '@angular/core';
 import { Project } from '../../model/project';
 import { PoliticianService } from '../../services/politician.service';
 import { Politician } from '../../model/politician';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
     selector: 'stats',
@@ -18,7 +19,8 @@ export class StatsComponent implements OnChanges {
     public seAbstiene = 0;
     public noConfirmado = 0;
 
-    public constructor(public politicianService: PoliticianService) {
+    public constructor(public politicianService: PoliticianService,
+    translate: TranslateService) {
     }
 
     public ngOnChanges(): void {

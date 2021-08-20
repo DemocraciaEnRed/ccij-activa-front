@@ -24,8 +24,8 @@
             </button> -->
             <button *ngIf="politician.phone" type="button" class=" btn-rectangular" data-toggle="modal" (click)="generateRandomMessage()" [attr.data-target]="'#whatsappModal' + politician.id">
                 <!-- <i class="fab fa-whatsapp"></i>&emsp; -->
-                "Enviar Twit"
-                <!-- {{'PCARD.BUTTON' | translate}} -->
+                <!-- "Enviar Twit" -->
+                {{'PCARD.BUTTON' | translate}}
             </button>
         </div>
     </div>

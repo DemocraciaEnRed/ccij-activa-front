@@ -59,9 +59,11 @@
   "S-POLITICIAN": "¡Comunicate para activar la campaña!",
   "VOTE":{
     "COUNT":"El Conteo de votos",
-    "FAVOR": "a favor",
-    "AGAINST": "en contra",
-    "NOTCONF": "no confirmados",
-    "ABSTAINS": "se abstiene"
-  }
+    "FAVOR": "A FAVOR",
+    "AGAINST": "EN CONTRA",
+    "NOTCONF": "NO OCNFIRMADOS",
+    "ABSTAINS": "SE ABSTIENE"
+  },
+  "TALLY": "Ya se enviaron {{number}} mensajes para apoyar"
+
 }

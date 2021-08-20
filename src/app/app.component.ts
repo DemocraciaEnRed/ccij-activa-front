@@ -10,5 +10,14 @@ export class AppComponent {
 
   public submitted = false;
   
+  constructor(private translate: TranslateService) {
+    const browserLanguage = translate.getBrowserLang();
+    translate.setDefaultLang('en');
+    translate.use(browserLanguage);
+  }
+
+  switchLanguage(language: string) {
+    this.translate.use(language);
+  }
 
 }
