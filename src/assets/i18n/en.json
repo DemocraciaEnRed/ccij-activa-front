@@ -65,7 +65,18 @@
     "NOTCONF": "NOT OCNFIRMED",
     "ABSTAINS": "ABSTAINS"
   },
-  "TALLY": "{{number}} messages have already been sent to support"
+  "TALLY": "{{number}} messages have already been sent to support",
+  "FAQS":{
+    "EPIGRAPH": "If you are in doubt about our campaigns, we invite you to read below information that will be useful to you.",
+    "AQS": {
+      "Q1":"What information should I include in my mails/calls to targets?",
+      "A1": "You should include your full name and a personalized message. You can use our templates to get a sense of what you can write, but if possible, make sure the text you include is written in your own words so whoever receives it knows there is an individual writing the message. If you’re supporting a detained individual with your message, you should include their name and A number.",
+      "Q2":"What can I do if I want to get more involved in the campaigns?",
+      "A2": "Follow our social media accounts @ccijustice for more information on the campaigns we lead and support.",
+      "Q3":"What other ways are there to get involved with the fight for the liberation of immigrants in detention?",
+      "A3": "You can become a one time or recurring donor to the Yuba County Jail and Mesa Verde donation fund, which helps immigrants in ICE detention and in their struggle after they are released or deported. If you can host a person who has been released from immigration detention, would like to become a penpal to someone detained, or have any other ideas of how to support this fight, write to us at info@ccijustice.org"
+    }
 
+  }
 
 }

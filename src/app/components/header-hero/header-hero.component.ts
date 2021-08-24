@@ -11,6 +11,6 @@ export class HeaderHeroComponent {
     @Input() title: string = 'HEADER.HERO.DEFAULT.TITLE';
     @Input() heroImg : string = '../../../assets/images/logo-oscuro.png';
     @Input() secondaryImg : string = '../../../assets/images/ccij-logo.png';
-    @Input() link: string = "#";
+    @Input() link: string = "http://ccijustice.org/";
     @Input() linkText : string = 'HEADER.HERO.DEFAULT.BUTTON'
 }

@@ -16,3 +16,12 @@ footer h5{
     margin-right: 15px;
   }
 }
+
+div a{
+  color:$azul-oscuro;
+  text-decoration: none;
+}
+
+div a:hover{
+  color:$blanco;
+}

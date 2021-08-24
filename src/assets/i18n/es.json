@@ -64,6 +64,18 @@
     "NOTCONF": "NO OCNFIRMADOS",
     "ABSTAINS": "SE ABSTIENE"
   },
-  "TALLY": "Ya se enviaron {{number}} mensajes para apoyar"
+  "TALLY": "Ya se enviaron {{number}} mensajes para apoyar",
+  "FAQS":{
+    "EPIGRAPH": "Si estás en duda sobre nuestras campañas, te invitamos a leer a continuación información que te será de utilidad.",
+    "AQS": {
+      "Q1":"¿Qué información debo incluir en mis correos/llamadas a los targets?",
+      "A1": "Debes incluir tu nombre completo y un mensaje personalizado. Puedes usar nuestro membrete para tener una idea sobre qué escribir, pero en lo posible, asegúrate de que el texto está escrito en tus propias palabras para que la persona que lo reciba sepa que hay un individuo detrás del mensaje. Si en tu mensaje estás apoyando a un individuo detenido, debes incluir su nombre y número A.",
+      "Q2":"¿Si me quiero involucrar más a las campañas, qué puedo hacer?",
+      "A2": "Para más información sobre las campañas de las que hacemos parte, puedes seguirnos por redes sociales @ccijustice.org.",
+      "Q3":"¿Qué otras formas hay de involucrarse en  la lucha por la liberación de inmigrantes detenidos?",
+      "A3": "Te puedes convertir en un donante único o recurrente del fondo que ayuda a los migrantes detenidos en Yuba County Jail y Mesa Verde. El fondo destina recursos para aquellos detenidos en estos centros de detención o aquellos liberados o deportados por la migra en el comienzo de su nueva vida"
+    }
+
+  }
 
 }

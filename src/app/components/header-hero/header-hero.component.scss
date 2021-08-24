@@ -25,3 +25,20 @@ a{
   position: relative;
   top: 14px
 }
+
+.c-img{
+  // justify-content: flex-end;
+  padding: 0px;
+}
+.c-img img{
+  margin: auto;
+  display: block;
+  padding: 0px !important;
+  @media screen and (min-width: 992px) {
+      margin-right: 0px;
+
+  }
+}
+.img-fluid{
+  max-height: 248px;
+}

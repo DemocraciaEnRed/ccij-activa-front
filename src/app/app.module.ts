@@ -35,7 +35,7 @@ import { MainComponent } from './pages/main/main.component';
 import { VideoSliderComponent } from './components/video-slider/video-slider.component';
 import { PropuestaSliderComponent } from './components/propuesta-slider/propuesta-slider.component';
 import { ArticleComponent } from './components/article/article.component';
-
+import { FaqsComponent } from './pages/faqs/faqs.component';
 //import 'angular-carousel';
 import * as angularCarousel from "angular-carousel";
 
@@ -56,7 +56,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     PropuestaSliderComponent,
     ArticleComponent,
     MainComponent,
-    ProjectCardComponent
+    ProjectCardComponent,
+    FaqsComponent
   ],
   imports: [
     ComponentsModule,
