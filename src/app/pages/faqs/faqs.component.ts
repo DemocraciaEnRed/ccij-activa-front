@@ -5,4 +5,6 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
     templateUrl: './faqs.component.html',
     styleUrls: ['./faqs.component.scss']
 })
-export class FaqsComponent  {}
+export class FaqsComponent  {
+    public link1 =''
+}
