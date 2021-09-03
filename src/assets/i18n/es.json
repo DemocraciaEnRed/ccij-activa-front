@@ -26,11 +26,13 @@
   },
   "MAIN": {
     "TITLE": "Una plataforma que reúne, impulsa y potencia los llamados a la acción de nuestra comunidad para ponerle fin a la detención migratoria mientras elevamos las voces de migrantes previamente y actualmente detenidos por la migra.",
+    "OURJOB": "Conoce nuestro trabajo",
+    "KNOW": "conocenos",
     "HIGNLIGHTED":{
       "INSTRCTIONS": "Cuando hagas click en los botones que están debajo de lxs congresistas vas a poder contactarte directamente con ellxs y pedirles que apoyen nuestras causas (o decirles lo que quieras). Más abajo podés encontrar más información nuestras causas comunes. La agenda electoral la definimos nosotres. Sumate."
     },
     "PROJECTS": {
-      "TITLE": "Conocé nuestras campañas",
+      "TITLE": "Conoce nuestras campañas",
       "SUBTITLE": "Ingresa a cada una de las campañas para obtener más información y activar a lxs congresistas."
     },
     "PROJECT_CARD":{
@@ -44,10 +46,10 @@
   "PROJECT":{
     "TITLE": "HOLA",
     "STATIC": {
-      "VOICE": "Tu voz es muy importante para generar impacto, elegí cómo querés ayudar y sumate. ¿qué estás esperando? (se podria poner 1 oracion mas con alo de info)",
-      "COMUNICATION": "¡Elegí el medio de comunicación que prefieras y activá la campaña!",
-      "KNOW": "Conocé más acerca de la detención de inmigrantes y salud pública",
-      "HELP": "¿Querés ayudar con esta campaña?",
+      "VOICE": "Tu voz es muy importante para generar impacto, elige cómo quieres ayudar y sumate. ¿qué estás esperando?",
+      "COMUNICATION": "¡Elige el medio de comunicación que prefieras y activa la campaña!",
+      "KNOW": "Conoce más acerca de la detención de inmigrantes y salud pública",
+      "HELP": "¿Quieres ayudar con esta campaña?",
       "B-ACTIVE": "activar campaña",
       "MORECAMPAING": "ver más campañas"
     }
@@ -56,12 +58,12 @@
     "BUTTON": "Enviar Twit"
   },
   "S-VIDEO": "Videos informativos",
-  "S-POLITICIAN": "¡Comunicate para activar la campaña!",
+  "S-POLITICIAN": "¡Comunícate para activar la campaña!",
   "VOTE":{
     "COUNT":"El Conteo de votos",
     "FAVOR": "A FAVOR",
     "AGAINST": "EN CONTRA",
-    "NOTCONF": "NO OCNFIRMADOS",
+    "NOTCONF": "NO CONFIRMADOS",
     "ABSTAINS": "SE ABSTIENE"
   },
   "TALLY": "Ya se enviaron {{number}} mensajes para apoyar",

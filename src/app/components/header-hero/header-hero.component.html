@@ -1,16 +1,16 @@
-<div class="row bg-head">
-  <div class="container">
+<div class="row bg-head " [ngStyle]="{'margin-top.px': width ? 50 : 10}">
+  <div class="container maxHeight">
     <div class="row align-content-end ">
       <div class="c-img justify-content-end justify-content-md-center col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
         <img class="img-fluid" [src]="heroImg">
       </div>
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6  container-logo align-items-center justify-content-center">  
-        <div class="py-3 pt-5">
-          <h1 class="title text-center">{{title | translate}}</h1>
-          <div class="row  align-items-center">
-            <img class="card-img-left" [src]="secondaryImg">
-            <div class="align-selft-end">
-              <a class="btn-rectangular " [href]="link">{{linkText | translate}}</a>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 maxHeight container-logo align-items-center justify-content-center">  
+        <div class="py-3 ">
+          <h1 class="title px-3 " [ngClass]="width ? 'text-center' : 'text-left'">{{title | translate}}</h1>
+          <div class="row justify-content-center mx-3">
+            <img class="  col-xs-12 card-img-left pr-5" [src]="secondaryImg">
+            <div class="btn-rectangular">
+              <a class=" " [href]="link">{{linkText | translate}}</a>
             </div>
           </div>
         </div> 

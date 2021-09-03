@@ -12,3 +12,15 @@
     color: $azul-oscuro;
     @include font-size-media-medium(18px, 22px);
 }
+
+@media (min-widht: $width-medium){
+  .text-just-res{
+      text-align: center ;
+  }
+}
+// @media (max-widht: $width-medium){
+//   .text-just-res{
+//       text-align: left ;
+//   }
+ 
+// }

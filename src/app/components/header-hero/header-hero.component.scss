@@ -2,6 +2,13 @@
 
 .bg-head{
   background-color: $azul-oscuro;
+
+  }
+
+.maxHeight{
+  @media screen and (min-width: 992px){
+    max-height: 248px;
+}
 }
 .container-logo{
   background-color: $blanco;
@@ -23,9 +30,11 @@
 a{
   text-align: center;
   position: relative;
-  top: 14px
+  top: 5px;
 }
-
+// a:hover{
+//   color: inherit;
+// }
 .c-img{
   // justify-content: flex-end;
   padding: 0px;

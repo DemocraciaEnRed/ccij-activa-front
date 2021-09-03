@@ -10,7 +10,10 @@ import {TranslateService} from '@ngx-translate/core';
 export class HeaderHeroComponent {
     @Input() title: string = 'HEADER.HERO.DEFAULT.TITLE';
     @Input() heroImg : string = '../../../assets/images/logo-oscuro.png';
-    @Input() secondaryImg : string = '../../../assets/images/ccij-logo.png';
+    @Input() secondaryImg : string = '../../../assets/images/ccij-logo2.jpg';
     @Input() link: string = "http://ccijustice.org/";
     @Input() linkText : string = 'HEADER.HERO.DEFAULT.BUTTON'
+
+    public width  = screen.width < 1024;
+
 }

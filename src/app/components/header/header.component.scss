@@ -10,7 +10,10 @@ nav{
       color: #9AB5DE!important;
     }
   }
+  
 }
+
+
 .modal-content {
   border-radius: 20px;
   padding: 15px;
@@ -30,4 +33,13 @@ nav{
 .question {
   font-family: $raleway;
   margin-bottom: 15px;
+}
+
+
+.nav-item{
+  padding: 30px;
+}
+
+.nav-item a{
+  color: $azul-oscuro2;
 }

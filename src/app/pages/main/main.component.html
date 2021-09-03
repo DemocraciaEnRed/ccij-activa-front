@@ -1,8 +1,8 @@
 <header-hero></header-hero>
-<div class="container text-center mt-3 p-4 banner-home bg-azul-claro">
+<div class="container    mt-3 p-4 banner-home bg-azul-claro">
   <div class="col-12 col-md-10 offset-md-1">
     <!-- <h1></h1> -->
-    <h2>{{ 'MAIN.TITLE' | translate }}</h2>
+    <h2 class='text-center' >{{ 'MAIN.TITLE' | translate }}</h2>
   </div>
 </div>
 
@@ -42,7 +42,7 @@
     <div class="container">
         <!-- Proyectos -->
         <div class="row">
-            <div class="col col-12 mb-4">
+            <div id='projects' ng-show="projectsVisivility" class="col col-12 mb-4">
                 <ng-template [ngIf]="!isMobileView">
                     <ng-template ngFor let-p [ngForOf]="projectList">
                         <project-card [project]="p"></project-card>
@@ -62,7 +62,7 @@
     </div>
 </div>
 <div class="text-center bg-azul-claro p-4">
-    <button class="btn btn-outline-dark rounded-0">{{'MAIN.ALL_PROJECTS' | translate}}</button>
+    <button class="btn-rectangular rounded-0" ng-click="viewAll" ng-hide="projectsVisivility" >{{'MAIN.ALL_PROJECTS' | translate}}</button>
 </div>
 <section class="core-values container">
     <h1 class="text-center">{{'MAIN.CORE_VALUES.TITLE' | translate}}</h1>
@@ -71,28 +71,36 @@
             <div class="text-center">
                 <img src="" class="rounded-circle" >
             </div>
-            <p>Resources for other Pro Bono Legal Service providers</p>
-            <a href="#">Access Here ></a>
+            <div class="px-3 px-sm-3 px-xl-4">
+                <p>Resources for other Pro Bono Legal Service providers</p>
+            <!-- <a href="#">Access Here ></a> -->
+            </div>
+            
         </div>
         <div class="col-sm ">
             <div class="text-center">
                 <img src="" class="rounded-circle">
             </div>
-            <p>Resources for the comunity</p>
-            <a href="#">Access Here ></a>
+            <div class="px-3 px-sm-3 px-xl-4">
+                <p>Resources for the comunity</p>
+            <!-- <a href="#">Access Here ></a> -->
+            </div>
+            
         </div>
         <div class="col-sm">
             <div class="text-center">
                 <img src="" class="rounded-circle">
             </div>
+            <div class="px-3 px-sm-3 px-xl-4">
+                <p>Thank you for supporting our work!</p>
+                <!-- <a href="#">Donate Now ></a> -->
+            </div>
             
-            <p>Thank you for supporting our work!</p>
-            <a href="#">Donate Now ></a>
         </div>
     </div>
     <div class="text-center know-us">
-        <h2>Conoce nuestro trabajo</h2>
-        <button class="btn btn-outline-dark">Conocenos</button>
+        <h2>{{'MAIN.OURJOB' | translate}}</h2>
+        <button class="btn-rectangular">{{'MAIN.KNOW' | translate}}</button>
     </div>
     
 </section>

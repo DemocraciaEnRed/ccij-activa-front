@@ -117,4 +117,11 @@ export class MainComponent {
             this.isMobileView = false;
         }
     }
+
+    // $scope.projectsVisivility = false 
+
+    // $scope.viewAll = function() {
+    //     $scope.projectsVisivility = true; 
+
+    //     }
 }

@@ -13,21 +13,23 @@
     },
     "HERO":{
       "DEFAULT":{
-        "TITLE": "Campañas de liberación accessibles a la comunidad",
-        "BUTTON": "Ver sitio"
+        "TITLE": "Liberation campaigns accessible to the community",
+        "BUTTON": "view site"
       }
     }
   },
   "HOME": {},
   "FOOTER":{
-    "NETWORKS": "Nuestras redes",
-    "PROJECTS": "Nuestras campañas",
-    "VIEW_SITE": "Ver sitio"
+    "NETWORKS": "Our Networks",
+    "PROJECTS": "Our Campaings",
+    "VIEW_SITE": "view site"
   },
   "MAIN": {
-    "TITLE": "Una plataforma que reúne, impulsa y potencia los llamados a la acción de nuestra comunidad para ponerle fin a la detención migratoria mientras elevamos las voces de migrantes previamente y actualmente detenidos por la migra.",
+    "TITLE": "A platform that brings together, promotes and empowers our community's calls to action to end immigration detention while raising the voices of migrants previously and currently detained by the immigration.",
+    "OURJOB": "Know our work",
+    "KNOW": "know us",
     "HIGNLIGHTED":{
-      "INSTRCTIONS": "Cuando hagas click en los botones que están debajo de lxs congresistas vas a poder contactarte directamente con ellxs y pedirles que apoyen nuestras causas (o decirles lo que quieras). Más abajo podés encontrar más información nuestras causas comunes. La agenda electoral la definimos nosotres. Sumate."
+      "INSTRCTIONS": "When you click on the buttons below the congressmen you will be able to contact them directly and ask them to support our causes (or tell them what you want). Below you can find more information about our common causes. The electoral agenda is defined by us. Join."
     },
     "PROJECTS": {
       "TITLE": "Know our campaings",

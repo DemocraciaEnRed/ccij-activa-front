@@ -11,7 +11,9 @@ export class AppComponent {
   public submitted = false;
   
   constructor(private translate: TranslateService) {
-    const browserLanguage = translate.getBrowserLang();
+    // const browserLanguage = translate.getBrowserLang();
+    // se pidio forzar le ingles
+    const browserLanguage = 'en';
     translate.setDefaultLang('en');
     translate.use(browserLanguage);
   }
