@@ -4,16 +4,17 @@
       <div class="c-img justify-content-end justify-content-md-center col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
         <img class="img-fluid" [src]="heroImg">
       </div>
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 maxHeight container-logo align-items-center justify-content-center">  
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 maxHeight container-logo  align-items-center justify-content-center">  
         <div class="py-3 ">
           <h1 class="title px-3 " [ngClass]="width ? 'text-center' : 'text-left'">{{title | translate}}</h1>
-          <div class="row justify-content-center mx-3">
-            <img class="  col-xs-12 card-img-left pr-5" [src]="secondaryImg">
-            <div class="btn-rectangular">
-              <a class=" " [href]="link">{{linkText | translate}}</a>
-            </div>
-          </div>
+          
         </div> 
+        <div class="row justify-content-center mx-3" [ngClass]="width ? '' : 'to-bottom'">
+          <img class="  col-xs-12 card-img-left pr-5" [src]="secondaryImg">
+          <div class="btn-rectangular">
+            <a class=" " [href]="link">{{linkText | translate}}</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

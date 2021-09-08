@@ -41,9 +41,12 @@
     <div class="dialog-triangle"></div>
     <div class="container">
         <!-- Proyectos -->
-        <div class="row">
-            <div id='projects' ng-show="projectsVisivility" class="col col-12 mb-4">
-                <ng-template [ngIf]="!isMobileView">
+        
+        <div class="row" >
+            <project-card [project]="projectList[0]" *ngIf="!projectsVisivility"></project-card>
+
+            <div id='projects' [@animatCampaings]='campaingsVisivility'  class="col col-12 mb-4" >
+                <ng-template [ngIf]="!isMobileView && projectsVisivility" >
                     <ng-template ngFor let-p [ngForOf]="projectList">
                         <project-card [project]="p"></project-card>
                     </ng-template>
@@ -60,10 +63,13 @@
             </div>
         </div>
     </div>
+   
 </div>
-<div class="text-center bg-azul-claro p-4">
-    <button class="btn-rectangular rounded-0" ng-click="viewAll" ng-hide="projectsVisivility" >{{'MAIN.ALL_PROJECTS' | translate}}</button>
+<div class="text-center bg-azul-claro p-4" >
+    <button class="btn-rectangular rounded-0" (click)="animacion()"  >{{'MAIN.ALL_PROJECTS' | translate}}</button>
 </div>
+
+
 <section class="core-values container">
     <h1 class="text-center">{{'MAIN.CORE_VALUES.TITLE' | translate}}</h1>
     <div class="row">

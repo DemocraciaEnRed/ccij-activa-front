@@ -28,6 +28,7 @@ import { FullListModule } from './pages/full-list/full-list.module';
 import { AppRoutes } from './helpers/routes.helper';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { CommonModule } from '@angular/common';  
 
 import { ProjectViewComponent } from './pages/project-view/project-view.component';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
@@ -70,6 +71,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     Ng2GoogleChartsModule,
     //MainModule,
     FormsModule,
+    CommonModule,
     HttpModule,
     FullListModule,
     TranslateModule.forRoot({

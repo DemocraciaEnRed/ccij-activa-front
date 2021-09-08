@@ -6,11 +6,27 @@ import { Project } from '../../model/project';
 import { ConfigService } from '../../services/config.service';
 import { Politician } from '../../model/politician';
 import * as Flickity from "flickity"
+import { state, style, trigger, transition, animate } from '@angular/animations';
 
 @Component({
     selector: 'main-page',
     templateUrl: './main.component.html',
-    styleUrls: ['./main.component.scss']
+    styleUrls: ['./main.component.scss'],
+    animations:[
+        trigger('animatCampaings', [
+            state('visible', style({
+                opacity: '1',
+                animation: 'scale-up-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both'
+                
+            })),
+            state('invisible', style({
+                opacity: '0',
+            })),
+            transition('invisible <=> visible',
+                animate('1s') )
+        ])
+        
+    ]
 })
 export class MainComponent {
 
@@ -23,6 +39,10 @@ export class MainComponent {
     public isMobileView: Boolean;
     public isIOS: Boolean;
     public slider: Flickity;
+    public projectsVisivility: boolean = false;
+    campaingsVisivility: string = 'invisible';
+   
+    
 
     public sanitizeHtml(html: string): any {
         return this.sanitizer.bypassSecurityTrustHtml(html);
@@ -81,6 +101,8 @@ export class MainComponent {
                 .then(response => {
                     this.tally = response;
                 });
+            
+      
     }
 
     ngOnInit() {
@@ -118,10 +140,11 @@ export class MainComponent {
         }
     }
 
-    // $scope.projectsVisivility = false 
-
-    // $scope.viewAll = function() {
-    //     $scope.projectsVisivility = true; 
-
-    //     }
+   viewAll() {
+       this.projectsVisivility = this.projectsVisivility ? false : true;
+   }
+   animacion(){
+    this.campaingsVisivility = this.campaingsVisivility === 'invisible' ? 'visible' : 'invisible';
+    this.viewAll();
+   }
 }

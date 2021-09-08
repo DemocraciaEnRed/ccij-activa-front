@@ -22,7 +22,6 @@ export class HeaderComponent {
 
         this.currentLang = browserLang.match(/en|es/) ? browserLang : 'en'
         translate.use(this.currentLang);
-        console.log('resolucion: ', this.width);
     }
     public changeLang(lang: string){
         this.translate.use(lang);
