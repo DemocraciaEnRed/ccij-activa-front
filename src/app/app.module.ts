@@ -40,7 +40,6 @@ import { FaqsComponent } from './pages/faqs/faqs.component';
 //import 'angular-carousel';
 import * as angularCarousel from "angular-carousel";
 
-
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -65,7 +64,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     CoreModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(AppRoutes, { enableTracing: false }),
+    RouterModule.forRoot(AppRoutes, { enableTracing: false , useHash: true}),
     HttpClientModule,
     ReactiveFormsModule,
     Ng2GoogleChartsModule,
@@ -91,6 +90,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     DistrictService,
     PoliticianService,
     {provide: LocationStrategy, useClass: PathLocationStrategy}
+  ],
+  exports: [
+    RouterModule
   ],
   bootstrap: [AppComponent]
 })

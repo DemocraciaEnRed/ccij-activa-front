@@ -36,9 +36,12 @@
       "SUBTITLE": "Ingresa a cada una de las campañas para obtener más información y activar a lxs congresistas."
     },
     "PROJECT_CARD":{
-      "BUTTON": "Get Involved"
+      "ACTIVATE": "Get Involved",
+      "BUTTON": "SEE MORE"
     },
     "ALL_PROJECTS": "See all campaings",
+    "NOT_PROJECTS": "not available",
+
     "CORE_VALUES": {
       "TITLE": "We use coordination, advocacy, and legal services to fight for the liberation of immigrants in detention"
     }
@@ -51,7 +54,8 @@
       "KNOW": "Learn more about immigration detention and public health",
       "HELP": "Do you want to help with this campaign?",
       "B-ACTIVE": "activate campaing",
-      "MORECAMPAING": "see more campaings"
+      "MORECAMPAING": "see more campaings",
+      "DEF_TEXT_LINK": "see more"
 
     }
   },

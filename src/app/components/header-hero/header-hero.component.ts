@@ -13,7 +13,14 @@ export class HeaderHeroComponent {
     @Input() secondaryImg : string = '../../../assets/images/ccij-logo2.jpg';
     @Input() link: string = "http://ccijustice.org/";
     @Input() linkText : string = 'HEADER.HERO.DEFAULT.BUTTON'
+    @Input() callBack : boolean = false;
+    @Input() CBclick = null;
 
     public width  = screen.width < 1024;
 
+    CBC(){
+
+        this.CBclick(this.link);
+        
+    }
 }

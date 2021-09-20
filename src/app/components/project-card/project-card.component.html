@@ -1,12 +1,15 @@
-<div class="project-card mb-3 row mx-0">
+<div class="project-card  mb-3 row mx-0">
     <div class="col-12 col-img {{ centerImg ? 'center-img' : '' }}" [style.background-image]="backgroundImage" [style.background-color]="bgColor" [routerLink]="['/proyecto',project.slug]" fragment="activa">
         <div class="project-title" [innerHTML]="projectTitle"></div>
     </div>
 
-    <div class="col-12 py-4">
-        <div class="bg-azul-claro col-12 col-md-9 text-justify p-2 float-left" [innerHTML]="projectDescription"></div>
-        <div class="col-12 col-md-3 float-left">
-            <button class="btn btn-primary btn-aec float-right" type="button" [routerLink]="['/proyecto',project.slug]" fragment="activa">
+    <div class="col-12 py-4 px-md-0 mx-md-0 ">
+        <div class="  col-12 col-md-9 text-justify p-2 float-left" style="height: 138px" [innerHTML]="projectDescription"></div>
+        <div class="col-12 col-md-3 float-left py-3 p-0">
+            <button class="btn btn-primary btn-claro btn-aec mb-md-2 float-right" type="button" [routerLink]="['/proyecto',project.slug]" fragment="comunicaciones" >
+                {{'MAIN.PROJECT_CARD.ACTIVATE' | translate}} 
+            </button>
+            <button class="btn btn-primary   btn-aec mt-md-2 float-right" type="button" [routerLink]="['/proyecto',project.slug]" fragment="description">
                 {{'MAIN.PROJECT_CARD.BUTTON' | translate}}
             </button>
         </div>

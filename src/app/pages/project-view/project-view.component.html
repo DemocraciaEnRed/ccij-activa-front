@@ -1,4 +1,4 @@
-<header-hero   [title]="currentProject.name" [heroImg]="backgroundAux" [link]="link" [linkText]="textLink"></header-hero>
+<header-hero   [title]="currentProject.name" [heroImg]="backgroundAux" [link]="link" [linkText]="textLink" [callBack]="true" [CBclick]="clickScroll" ></header-hero>
 
 <div class="container text-center mt-3 p-4 banner-home bg-blanco">
   <div class="col-12 col-md-10 offset-md-1">
@@ -30,8 +30,8 @@
     </h2>
   </div>
 </div>
-<!-- Politicxs -->
-<div id='politicos' class="bg-mosaico-blanco">
+<!-- Comunicaciones -->
+<div id='comunicaciones' class="bg-mosaico-blanco">
   <politician-slider [politiciansList]="politiciansListSlider" [project]="currentProject"></politician-slider>
 </div>
 <div class="container-fluid text-center mt-3 p-4 banner-home bg-azul-claro">
@@ -75,7 +75,7 @@
 
 
 <!-- Descripcion -->
-<div id='description' class="bg-mosaico-blanco pb-5">
+<div id='descripcion' class="bg-mosaico-blanco pb-5">
   <div class="container">
     <div class="row desc-strip">
       <div class="desc-text" [innerHtml]="projectDescription"></div>
@@ -90,7 +90,7 @@
   </div>
   <div class="row justify-content-center">
     <a class=' btn btn-primary btn-claro btn-aec btn-lg w-50  ' tabindex="0"
-      [routerLink]="['/proyecto', currentProject.slug]" fragment="politicos" target="_self">{{'PROJECT.STATIC.B-ACTIVE' | translate}}</a>
+     (click)='clickScroll("comunicaciones")'>{{'PROJECT.STATIC.B-ACTIVE' | translate}}</a>
     <button type="button" class=" btn btn-primary btn-aec btn-lg w-50 offset-md-1" [routerLink]="['/lista', currentProject.slug]">{{'PROJECT.STATIC.MORECAMPAING' | translate}} &emsp;<small><i class="fas fa-chevron-right"></i></small></button>
 
   </div>

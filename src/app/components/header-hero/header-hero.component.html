@@ -11,8 +11,12 @@
         </div> 
         <div class="row justify-content-center mx-3" [ngClass]="width ? '' : 'to-bottom'">
           <img class="  col-xs-12 card-img-left pr-5" [src]="secondaryImg">
-          <div class="btn-rectangular">
+
+          <div *ngIf="!callBack" class="btn-rectangular">
             <a class=" " [href]="link">{{linkText | translate}}</a>
+          </div>
+          <div *ngIf="callBack" class="btn-rectangular">
+            <a class=" "  (click)='CBC()' target="_self">{{linkText | translate}}</a>
           </div>
         </div>
       </div>

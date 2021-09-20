@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,  AfterViewInit } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Project } from '../../model/project';
 import { ProjectService } from '../../services/project.service';
 import { Politician } from '../../model/politician';
 import { PoliticianService } from '../../services/politician.service';
-
+import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../../../environments/environment';
 import { STRING_TYPE } from '@angular/compiler/src/output/output_ast';
 import { ProjectCardComponent } from '../../components/project-card/project-card.component';
@@ -23,8 +23,8 @@ export class ProjectViewComponent implements OnInit {
     public politiciansListSlider = new Array<Politician>();
     public projectImage = ''; 
     public backgroundAux = '';
-    public link = '';
-    public textLink = "leer más";
+    public link = 'descripcion';
+    public textLink= '' ;
     public sanitizeStyle(style): any {
         return this.sanitizer.bypassSecurityTrustStyle(style);
     }
@@ -37,9 +37,10 @@ export class ProjectViewComponent implements OnInit {
     constructor(private route: ActivatedRoute,
         private projectService: ProjectService,
         private politicianService: PoliticianService,
-        public sanitizer: DomSanitizer) {
+        public sanitizer: DomSanitizer,
+        private translate: TranslateService) {
     }
-
+    
     public ngOnInit(): void {
         this.route.paramMap.subscribe(params => {
             this.projectService
@@ -69,8 +70,10 @@ export class ProjectViewComponent implements OnInit {
                         $('style').after('<style id=\'project-styles\'></style>');
                         $('#project-styles').html(text).data('project', p.name);
                     }*/
+                    this.textLink = this.translate.instant('PROJECT.STATIC.DEF_TEXT_LINK');
+                    
                     $('#newsletter_project').val(p.name).trigger('input').trigger('change');
-                    this.link = `/proyectos/${this.currentProject.slug}#description`;
+                    // this.link = `/proyectos/${this.currentProject.slug}#descripcion`;
                     // contruimos la url de la imagen, si se quiere usar directo la imagne en un <img> usar backgroundAux
                     this.backgroundAux =  environment.imgBase + this.currentProject.dir.replace(/\\/g, '/') + '/' + this.currentProject.image ;
                     // const backgroundAux = 'url(' +
@@ -95,7 +98,32 @@ export class ProjectViewComponent implements OnInit {
                     element.scrollIntoView();
                 });
         });
+        this.checkURL();
+
     }
+
+    clickScroll 
+        (fragment) {
+            window.location.hash = '#' + fragment;
+            console.log(fragment);
+          }
+    
+    checkURL(){
+        // solucion tmeporal al scrolling con hash en angular
+       let url = document.URL;
+       
+       if (url.includes('#')){
+            let fragment = url.substr(url.indexOf('#')+1);
+            console.log('en el fi' );
+            this.clickScroll(fragment);
+       }
+         
+    }
+
+    // AfterViewInit()   {
+    //     console.log('AFTER');
+    //     this.checkURL();
+    // } 
 
     
 }

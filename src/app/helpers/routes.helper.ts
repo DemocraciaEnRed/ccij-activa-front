@@ -8,6 +8,8 @@ import { FaqsComponent } from '../pages/faqs/faqs.component';
 export const AppRoutes = [
     { path: '', pathMatch: 'full', component: MainComponent },
     { path: "proyecto/:id", component: ProjectViewComponent },
+    { path: "proyecto/:id", component: PoliticianSliderComponent,outlet:'comunicaciones' },
+
     { path: "faqs", component: FaqsComponent },
     { path: "lista/:id", component: FullListComponent },
     { path: '**', redirectTo: '' }

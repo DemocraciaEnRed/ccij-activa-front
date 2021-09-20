@@ -16,14 +16,14 @@ import { state, style, trigger, transition, animate } from '@angular/animations'
         trigger('animatCampaings', [
             state('visible', style({
                 opacity: '1',
-                animation: 'scale-up-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both'
-                
+                height: 'inherit'
+
             })),
             state('invisible', style({
-                opacity: '0',
+                height: '0px'
             })),
             transition('invisible <=> visible',
-                animate('1s') )
+                animate('0.3s') )
         ])
         
     ]
