@@ -12,21 +12,21 @@ import { state, style, trigger, transition, animate } from '@angular/animations'
     selector: 'main-page',
     templateUrl: './main.component.html',
     styleUrls: ['./main.component.scss'],
-    animations:[
-        trigger('animatCampaings', [
-            state('visible', style({
-                opacity: '1',
-                height: 'inherit'
+    // animations:[
+    //     trigger('animatCampaings', [
+    //         state('visible', style({
+    //             opacity: '1',
+    //             height: 'inherit'
 
-            })),
-            state('invisible', style({
-                height: '0px'
-            })),
-            transition('invisible <=> visible',
-                animate('0.3s') )
-        ])
+    //         })),
+    //         state('invisible', style({
+    //             height: '0px'
+    //         })),
+    //         transition('invisible <=> visible',
+    //             animate('0.3s') )
+    //     ])
         
-    ]
+    // ]
 })
 export class MainComponent {
 
@@ -39,8 +39,9 @@ export class MainComponent {
     public isMobileView: Boolean;
     public isIOS: Boolean;
     public slider: Flickity;
-    public projectsVisivility: boolean = false;
-    campaingsVisivility: string = 'invisible';
+    public first: Project;
+    // public projectsVisivility: boolean = false;
+    // campaingsVisivility: string = 'invisible';
    
     
 
@@ -94,6 +95,9 @@ export class MainComponent {
 
                 if (this.isMobileView) {
                     this.initializeCarousel()
+                }else{
+                    this.first =  this.projectList.shift();
+
                 }
             });
         this.configService
@@ -115,6 +119,9 @@ export class MainComponent {
         this.isIOS = /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
     }
 
+    // ngAfterViewInit(){
+    //     this.first =  this.projectList.shift();
+    // }
     initializeCarousel() {
         setTimeout( () => {
             this.slider = new Flickity( '.project-carousel', {
@@ -140,11 +147,11 @@ export class MainComponent {
         }
     }
 
-   viewAll() {
-       this.projectsVisivility = this.projectsVisivility ? false : true;
-   }
-   animacion(){
-    this.campaingsVisivility = this.campaingsVisivility === 'invisible' ? 'visible' : 'invisible';
-    this.viewAll();
-   }
+//    viewAll() {
+//        this.projectsVisivility = this.projectsVisivility ? false : true;
+//    }
+//    animacion(){
+//     this.campaingsVisivility = this.campaingsVisivility === 'invisible' ? 'visible' : 'invisible';
+//     this.viewAll();
+//    }
 }

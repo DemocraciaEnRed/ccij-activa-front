@@ -42,8 +42,24 @@
     <div class="dialog-triangle"></div>
     <div *ngIf="projectList || projectList === 0; else elseBlock" class="container">
         <!-- Proyectos -->
+        <div class="row">
+            
+            <project-card [project]="first" *ngIf="!isMobileView "></project-card>
+
+            <button class="mx-auto btn-rectangular rounded-0" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                {{'MAIN.ALL_PROJECTS' | translate}}
+            </button>
         
-        <div class="row" >
+            <div class="collapse" id="collapseExample">
+                <ng-template ngFor let-p [ngForOf]="projectList">
+                    <div class="card card-body">
+                        <project-card [project]="p"></project-card>
+                    </div>
+                </ng-template>
+            </div>
+        
+       </div>
+        <!-- <div class="row" >
             <project-card [project]="projectList[0]" *ngIf="!isMobileView && !projectsVisivility"></project-card>
 
             <div id='projects' [@animatCampaings]='campaingsVisivility'  class="col col-12 mb-4" >
@@ -65,7 +81,7 @@
         </div>
         <div class="text-center bg-azul-claro p-4" >
             <button class="btn-rectangular rounded-0" (click)="animacion()"  >{{'MAIN.ALL_PROJECTS' | translate}}</button>
-        </div>
+        </div> -->
     </div>
     <ng-template #elseBlock>
         <div class="container "   ><p class="col col-12 mb-4 text-center">{{'MAIN.NOT_PROJECTS' | translate}}</p></div>
