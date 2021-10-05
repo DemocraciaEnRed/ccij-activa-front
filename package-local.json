@@ -2,9 +2,9 @@
     "name": "CausasComunesFrontend",
     "version": "2.0.0",
     "license": "MIT",
-    "api": "http://localhost:7000/",
-    "imgBase": "http://localhost:7000/",
-    "production": false,
+    "api": "https://content.takeaction.ccijustice.org/graphql",
+    "imgBase": "https://content.takeaction.ccijustice.org/assets/",
+    "production": true,
     "scripts": {
         "ng": "ng",
         "start": "ng serve",

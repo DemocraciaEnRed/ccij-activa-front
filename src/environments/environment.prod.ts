@@ -1,7 +1,7 @@
 const packageVars = require('../../package.json');
 
 export const environment = {
-  api: 'https://admin.actua.somosmuchas.org/',
-  imgBase: 'https://admin.actua.somosmuchas.org/',
+  api: 'https://content.takeaction.ccijustice.org/graphql',
+  imgBase: 'https://content.takeaction.ccijustice.org/assets',
   production: true
 };

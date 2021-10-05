@@ -1,13 +1,17 @@
 import { Component, HostListener } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+// eliminar 
 import { ProjectService } from '../../services/project.service';
 import { PoliticianService } from './../../services/politician.service';
 import { Project } from '../../model/project';
+// 
 import { ConfigService } from '../../services/config.service';
 import { Politician } from '../../model/politician';
 import * as Flickity from "flickity"
 import { state, style, trigger, transition, animate } from '@angular/animations';
-
+// api
+import { CampaignsService } from '../../services/campaigns.service';
+import { Campaign } from '../../model/campaign';
 @Component({
     selector: 'main-page',
     templateUrl: './main.component.html',
@@ -30,7 +34,7 @@ import { state, style, trigger, transition, animate } from '@angular/animations'
 })
 export class MainComponent {
 
-    public projectList: Array<Project>;
+    public projectList: Array<Campaign> = [] ;
     public tally: Number = 0;
     public highlightedProjectExists = false;
     public highlightedProject: Project;
@@ -39,7 +43,7 @@ export class MainComponent {
     public isMobileView: Boolean;
     public isIOS: Boolean;
     public slider: Flickity;
-    public first: Project;
+    public first: Campaign ;
     // public projectsVisivility: boolean = false;
     // campaingsVisivility: string = 'invisible';
    
@@ -49,67 +53,97 @@ export class MainComponent {
         return this.sanitizer.bypassSecurityTrustHtml(html);
     }
 
-    constructor(public projectService: ProjectService,
+    constructor(public campaignsService: CampaignsService,
             public politicianService: PoliticianService,
             public configService: ConfigService,
             public sanitizer: DomSanitizer) {
-        if ($('#project-styles').length > 0) {
-            $('#project-styles').remove();
+        if ($('#Ist none-styles').length > 0) {
+            $('#Ist none-styles').remove();
         }
-        $('#newsletter_project').val('Home').trigger('input').trigger('change');
-        this.projectService
-            .getAll()
-            .then(response => {
-                let $highlighted = false;
-                let $highlightedProject = null;
-                response.forEach(function(item) {
-                    if (item.hasOwnProperty('highlighted') && item.highlighted === 1) {
-                        $highlighted = true;
-                        $highlightedProject = item;
-                    }
-                });
-                if($highlighted) {
-                    this.highlightedProjectExists = $highlighted;
-                    this.highlightedProject = $highlightedProject;
-                    //this.projectDescription = this.sanitizeHtml($highlightedProject.slider_text);
-                    this.projectDescription = $highlightedProject.slider_text.replace(/(http.*)[ .]/, '<a href="$1" target="_blank" rel="noopener noreferrer">LINK</a> ');
-                    this.politicianService
-                        .getAllByProject($highlightedProject.slug, true)
-                        .then(r => this.politiciansList = r.slice(0, 30).sort(function() {return .5 - Math.random(); }) );
+        // $('#newsletter_project').val('Home').trigger('input').trigger('change');
+        this.campaignsService.getAll()
+        .then( response =>
+            {
+                
+
+                for (let camp of response){
+                    this.projectList.push(camp);
+                    // this.projectList[camp]= {...response[camp]};
+
                 }
+                
+                // this.projectList= {...response};
 
-                let rProjectListFirst = [];
-                let rProjectCausas = [];
-                let firstToShow = ['debate-presidencial', 'derechos-en-juego', 'acuerdo-social-anticorrupcion'];
-                let dontShow = ['debate-presidencial'];
+                console.log('(main)ProjectList:', this.projectList)
 
-                response.forEach(function(project) {
-                    if (dontShow.indexOf(project.slug) != -1)
-                      return;
-                    if (firstToShow.indexOf(project.slug) != -1)
-                      rProjectListFirst.push(project)
-                    else
-                      rProjectCausas.push(project)
-                });
-                this.projectList = rProjectListFirst.concat(rProjectCausas);
 
                 if (this.isMobileView) {
                     this.initializeCarousel()
                 }else{
-                    this.first =  this.projectList.shift();
+                    if (this.projectList){
+                        this.first =  this.projectList.shift();
+                        console.log('first:',this.first)
+                    }else{
+                        console.log('projectList none')
+                    }
 
                 }
-            });
-        this.configService
-                .getTally()
-                .then(response => {
-                    this.tally = response;
-                });
+            })
+        // this.projectService
+        //     .getAll()
+        //     .then(response => {
+        //         let $highlighted = false;
+        //         let $highlightedProject = null;
+        //         response.forEach(function(item) {
+        //             if (item.hasOwnProperty('highlighted') && item.highlighted === 1) {
+        //                 $highlighted = true;
+        //                 $highlightedProject = item;
+        //             }
+        //         });
+        //         if($highlighted) {
+        //             this.highlightedProjectExists = $highlighted;
+        //             this.highlightedProject = $highlightedProject;
+        //             //this.projectDescription = this.sanitizeHtml($highlightedProject.slider_text);
+        //             this.projectDescription = $highlightedProject.slider_text.replace(/(http.*)[ .]/, '<a href="$1" target="_blank" rel="noopener noreferrer">LINK</a> ');
+        //             this.politicianService
+        //                 .getAllByProject($highlightedProject.slug, true)
+        //                 .then(r => this.politiciansList = r.slice(0, 30).sort(function() {return .5 - Math.random(); }) );
+        //         }
+
+        //         let rProjectListFirst = [];
+        //         let rProjectCausas = [];
+        //         let firstToShow = ['debate-presidencial', 'derechos-en-juego', 'acuerdo-social-anticorrupcion'];
+        //         let dontShow = ['debate-presidencial'];
+
+        //         response.forEach(function(Ist none) {
+        //             if (dontShow.indexOf(Ist none.slug) != -1)
+        //               return;
+        //             if (firstToShow.indexOf(Ist none.slug) != -1)
+        //               rProjectListFirst.push(Ist none)
+        //             else
+        //               rProjectCausas.push(Ist none)
+        //         });
+        //         this.projectList = rProjectListFirst.concat(rProjectCausas);
+
+        //         if (this.isMobileView) {
+        //             this.initializeCarousel()
+        //         }else{
+        //             this.first =  this.projectList.shift();
+
+        //         }
+        //     });
+        // this.configService
+        //         .getTally()
+        //         .then(response => {
+        //             this.tally = response;
+        //         });
             
       
     }
 
     ngOnInit() {
+       
+
         if( window.innerWidth <= 768) {
             this.isMobileView = true;
         } else {
@@ -124,7 +158,7 @@ export class MainComponent {
     // }
     initializeCarousel() {
         setTimeout( () => {
-            this.slider = new Flickity( '.project-carousel', {
+            this.slider = new Flickity( '.Ist none-carousel', {
                 // options
                 cellAlign: 'center',
                 autoPlay: true,

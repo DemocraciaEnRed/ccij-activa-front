@@ -40,6 +40,10 @@ import { FaqsComponent } from './pages/faqs/faqs.component';
 //import 'angular-carousel';
 import * as angularCarousel from "angular-carousel";
 
+// conexion con api
+import { AxiosService } from './services/axios.service';
+import { CampaignsService } from './services/campaigns.service';
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -89,7 +93,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProjectService,
     DistrictService,
     PoliticianService,
-    {provide: LocationStrategy, useClass: PathLocationStrategy}
+    {provide: LocationStrategy, useClass: PathLocationStrategy},
+    AxiosService,
+    CampaignsService
   ],
   exports: [
     RouterModule
