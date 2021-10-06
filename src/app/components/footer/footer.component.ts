@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ProjectService } from "../../services/project.service";
-import { Project } from '../../model/project';
+import { CampaignsService } from "../../services/campaigns.service";
+import { Campaign } from '../../model/campaign';
 
 @Component({
     selector: 'app-footer',
@@ -12,23 +12,22 @@ export class FooterComponent {
     newsletterMessage : String
     public formGroup: FormGroup;
     submitted : boolean = false
-    projectList: Array<Project>;
-    constructor(public fb: FormBuilder, public projectService: ProjectService){  
+    projectList: Array<Campaign>;
+    constructor(public fb: FormBuilder, public campaignsService: CampaignsService){  
       this.formGroup = fb.group({
         email: ['', Validators.compose([Validators.email, Validators.required])],
         project: ['']
       });
 
-      this.projectService
+      this.campaignsService
       .getAll()
       .then(response => {
           let rProjectList = []
-          let excludeProjects = ['debate-presidencial', 'derechos-en-juego', 'acuerdo-social-anticorrupcion'];
-          response.forEach(function(project) {
-            if (excludeProjects.indexOf(project.slug) == -1)
-              rProjectList.push(project)
-          });
+          for (let camp in response) {
+              rProjectList.push(response[camp])
+          }
           this.projectList = rProjectList;
+        
       });
 
 

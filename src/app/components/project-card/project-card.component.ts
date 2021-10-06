@@ -20,6 +20,7 @@ export class ProjectCardComponent implements OnInit {
     public centerImg: Boolean;
 
     public constructor(public sanitizer: DomSanitizer) {
+        
     }
 
     public sanitizeStyle(style): any {
@@ -31,7 +32,6 @@ export class ProjectCardComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        console.log('Card: ', this.project);
         const backgroundAux = 'url(' +
             environment.imgBase + this.project['image_cover'].id + ')';
         this.backgroundImage = this.sanitizeStyle(backgroundAux);

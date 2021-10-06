@@ -1,12 +1,8 @@
 import { Component, HostListener } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-// eliminar 
-import { ProjectService } from '../../services/project.service';
-import { PoliticianService } from './../../services/politician.service';
-import { Project } from '../../model/project';
 // 
 import { ConfigService } from '../../services/config.service';
-import { Politician } from '../../model/politician';
+// import { Politician } from '../../model/politician';
 import * as Flickity from "flickity"
 import { state, style, trigger, transition, animate } from '@angular/animations';
 // api
@@ -37,8 +33,8 @@ export class MainComponent {
     public projectList: Array<Campaign> = [] ;
     public tally: Number = 0;
     public highlightedProjectExists = false;
-    public highlightedProject: Project;
-    public politiciansList: Array<Politician>;
+    // public highlightedProject: Project;
+    // public politiciansList: Array<Politician>;
     public projectDescription: SafeHtml;
     public isMobileView: Boolean;
     public isIOS: Boolean;
@@ -54,7 +50,6 @@ export class MainComponent {
     }
 
     constructor(public campaignsService: CampaignsService,
-            public politicianService: PoliticianService,
             public configService: ConfigService,
             public sanitizer: DomSanitizer) {
         if ($('#Ist none-styles').length > 0) {
@@ -74,7 +69,6 @@ export class MainComponent {
                 
                 // this.projectList= {...response};
 
-                console.log('(main)ProjectList:', this.projectList)
 
 
                 if (this.isMobileView) {
@@ -82,7 +76,6 @@ export class MainComponent {
                 }else{
                     if (this.projectList){
                         this.first =  this.projectList.shift();
-                        console.log('first:',this.first)
                     }else{
                         console.log('projectList none')
                     }

@@ -1,9 +1,6 @@
 import { Component, OnInit ,  AfterViewInit } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { Project } from '../../model/project';
-import { ProjectService } from '../../services/project.service';
-import { Politician } from '../../model/politician';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../../../environments/environment';
 import { STRING_TYPE } from '@angular/compiler/src/output/output_ast';
@@ -44,13 +41,11 @@ export class ProjectViewComponent implements OnInit {
     
     public ngOnInit(): void {
         this.route.paramMap.subscribe(params => {
-            console.log('params:' , params)
 
             this.campaignsService
                 .getById(params['params']['id'])
                 .then(p => {
                     this.currentProject = p;
-                   
                     this.textLink = this.translate.instant('PROJECT.STATIC.DEF_TEXT_LINK');
                     // $('#newsletter_project').val(p.name).trigger('input').trigger('change');
                     // this.link = `/proyectos/${this.currentProject.slug}#descripcion`;
@@ -61,12 +56,10 @@ export class ProjectViewComponent implements OnInit {
                     this.projectImage = this.sanitizeHtml(this.backgroundAux);
                     this.projectImage = this.backgroundAux;
 
-                    console.log('desc: ', this.currentProject['translations'][0])
                     this.projectDescription = this.currentProject['translations'][0]['description'];
                     // this.projectDescription = this.sanitizeHtml(this.currentProject['translations']['description'].replace(/(http.*)[ .]/, '<a href="$1" target="_blank" rel="noopener noreferrer">LINK</a> '));
 
                     for (let action in this.currentProject['actions']){
-                        console.log('action: ', this.currentProject['actions'][action])
                         this.actionsListSlider.push(this.currentProject['actions'][action])
                     }
                     // this.politicianService

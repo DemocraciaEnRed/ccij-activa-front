@@ -1,12 +1,21 @@
 import { Injectable } from '@angular/core';
 import { AxiosService } from './axios.service';
 import {Campaign} from '../model/campaign'
+import { TranslateService } from '@ngx-translate/core';
+
 @Injectable()
+
 export class CampaignsService {
   
-  constructor(private axios: AxiosService) { }
+  constructor(private axios: AxiosService,
+    private translate: TranslateService) { }
+
+  private currentLang(){
+    return this.translate.currentLang
+  }
 
   public getAll(): Promise<Campaign[]>{
+    let lang = this.currentLang();
     const QUERY =`
     {
       campaigns{
@@ -16,10 +25,11 @@ export class CampaignsService {
           id
           title
         }
-        translations{
+        translations (filter: {languages_code: {id: { _eq: "${lang}"}}}) {
           title
-          description
           short_description
+          description
+          
         }
         actions{
           id
@@ -43,7 +53,8 @@ export class CampaignsService {
   }
 
   public getById(id:number): Promise<Campaign>{
-    // falta filtrarp or id la query
+    let lang = this.currentLang();
+
     const QUERY = `
     {
   
@@ -51,7 +62,7 @@ export class CampaignsService {
         image_cover {
           id
         }
-        translations (filter: {languages_code: {id: { _eq: "es"}}}) {
+        translations (filter: {languages_code: {id: { _eq: "${lang}"}}}) {
           title
           short_description
           description
@@ -64,7 +75,7 @@ export class CampaignsService {
             }
             name
           }
-          translations (filter: {languages_code: {id: { _eq: "es"}}}) {
+          translations (filter: {languages_code: {id: { _eq: "${lang}"}}}) {
             languages_code {
               id
             }
@@ -79,7 +90,6 @@ export class CampaignsService {
     return this.axios.post(QUERY)
     .then(response => {
      
-      console.log(response)
      return response['data']['campaigns_by_id'];     
     });
   }

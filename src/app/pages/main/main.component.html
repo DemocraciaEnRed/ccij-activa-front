@@ -44,7 +44,7 @@
         <!-- Proyectos -->
         <div class="row">
             
-            <project-card [project]="first" *ngIf="!isMobileView "></project-card>
+            <project-card [project]="first" *ngIf="!isMobileView && first "></project-card>
             <button class="mx-auto btn-rectangular rounded-0" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 {{'MAIN.ALL_PROJECTS' | translate}}
             </button>

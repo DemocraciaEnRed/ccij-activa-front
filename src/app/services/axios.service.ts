@@ -15,8 +15,8 @@ export class AxiosService {
   public post( query) : Promise<any> {
     return axios_.post(this.apiUrl, {query: query})
       .then((res) => {
-        console.log('----------  Campaigns -------------')
-        console.log(res.data)
+        // console.log('----------  Campaigns -------------')
+        // console.log(res.data)
          return res.data
       })
       .catch((error) => {

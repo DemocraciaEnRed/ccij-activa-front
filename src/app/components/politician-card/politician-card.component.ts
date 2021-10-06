@@ -2,7 +2,6 @@ import { Component, Input, OnInit, AfterViewChecked } from '@angular/core';
 import { Action } from '../../model/action';
 import { Project } from '../../model/project';
 import { ConfigService } from '../../services/config.service';
-import { ProjectService } from '../../services/project.service';
 import { environment } from '../../../environments/environment';
 import { TranslateService } from "@ngx-translate/core";
 import { Campaign } from '../../model/campaign';
@@ -61,19 +60,18 @@ export class PoliticianCardComponent implements OnInit {
     public showWhatsappHelp: boolean;
 
     public constructor(public configService: ConfigService,
-        public projectService: ProjectService,private translate: TranslateService) {
+        private translate: TranslateService) {
     }
 
     public ngOnInit(): void {
         this.imgUrl = environment.imgBase + this.action['actions_id']['icon']['id'];
-        console.log('icon ',this.action['actions_id'])
         this.showWhatsappHelp = false;
     }
 
     public openTwitterWindow(): void {
         // this.tallyUp();
         // const randomTweet = this.getRandomMessage().replace(/@([^a-zA-Z0-9]|$)/g, '@' + this.politician.twitter + '$1');
-        
+        window.open(this.action['translations'][0]['call_to_action_url'], '_blank');
         // window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(randomTweet), '_blank');
     }
 
@@ -83,12 +81,12 @@ export class PoliticianCardComponent implements OnInit {
 
     public openFacebookWindow(): void {
     //     this.tallyUp();
-    //     window.open(`https://facebook.com/${this.politician.facebook}`, '_blank');
+        window.open(this.action['translations'][0]['call_to_action_url'], '_blank');
      }
 
     public openInstagramWindow(): void {
         // this.tallyUp();
-        // window.open(`https://instagram.com/${this.politician.instagram}`, '_blank');
+        window.open(this.action['translations'][0]['call_to_action_url'], '_blank');
     }
 
     public getRandomMessage(): string {
@@ -103,17 +101,17 @@ export class PoliticianCardComponent implements OnInit {
         //     const index = Math.floor(Math.random() * length);
         //     return stanceTweets[index].text;
         // }
-         return '';
+         return 'falta definir ';
     }
     public encode(url:string) : string { 
         return encodeURIComponent(url);
     }
     public tallyUp(): void {
-        this.projectService
-            .tallyUp(this._project)
-            .then(ammount => {
-                this._project.tally = ammount;
-            });
+        // this.projectService
+        //     .tallyUp(this._project)
+        //     .then(ammount => {
+        //         this._project.tally = ammount;
+        //     });
     }
 
     public toggleWhatsappHelp() : void { 

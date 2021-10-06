@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Project } from '../../model/project';
+import { Campaign } from '../../model/campaign';
 import { DomSanitizer } from '@angular/platform-browser';
 import { environment } from '../../../environments/environment';
 
@@ -9,7 +9,7 @@ import { environment } from '../../../environments/environment';
 })
 export class ProjectLinkComponent implements OnInit {
 
-    @Input() project: Project;
+    @Input() project: Campaign;
     public bkg: string;
 
     public constructor(public sanitizer: DomSanitizer) {
@@ -21,7 +21,7 @@ export class ProjectLinkComponent implements OnInit {
 
     public ngOnInit(): void {
         const bkgAux = 'linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(' +
-            environment.imgBase + this.project.image + ') no-repeat';
+            environment.imgBase + this.project['image_cover'].id  + ') no-repeat';
         this.bkg = this.sanitize(bkgAux);
     }
 
