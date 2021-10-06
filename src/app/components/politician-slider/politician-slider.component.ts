@@ -1,6 +1,6 @@
 import { Component, Input, AfterViewInit, ElementRef, OnInit } from '@angular/core';
-import { Politician } from '../../model/politician';
-import { Project } from '../../model/project';
+import { Action } from '../../model/action';
+import { Campaign } from '../../model/campaign';
 import * as $ from 'jquery';
 
 @Component({
@@ -10,8 +10,8 @@ import * as $ from 'jquery';
 })
 export class PoliticianSliderComponent implements OnInit {
 
-    @Input() project: Project;
-    @Input() politiciansList: Politician[];
+    @Input() project: Campaign;
+    @Input() politiciansList: Action[];
 
     public constructor() {
     }

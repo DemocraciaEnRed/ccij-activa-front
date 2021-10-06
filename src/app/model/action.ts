@@ -1,8 +1,9 @@
 export class Action {
     id: number;
     name: string;
+    icon: {};
+
     translations : {};
-    actions: {};
   
 
     public static asignProps(a1: Action, a2: Action) {

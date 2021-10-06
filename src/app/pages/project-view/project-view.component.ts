@@ -9,6 +9,7 @@ import { environment } from '../../../environments/environment';
 import { STRING_TYPE } from '@angular/compiler/src/output/output_ast';
 import { ProjectCardComponent } from '../../components/project-card/project-card.component';
 import { Campaign } from '../../model/campaign';
+import { Action } from '../../model/action';
 import { CampaignsService } from '../../services/campaigns.service';
 
 @Component({
@@ -20,8 +21,8 @@ export class ProjectViewComponent implements OnInit {
 
     public currentProject: Campaign = new Campaign();
     public projectDescription: SafeHtml;
-    public politiciansList = new Array<Politician>();
-    public politiciansListSlider = new Array<Politician>();
+    // public politiciansList = new Array<Politician>();
+    public actionsListSlider = new Array<Action>();
     public projectImage = ''; 
     public backgroundAux = '';
     public link = 'descripcion';
@@ -64,7 +65,10 @@ export class ProjectViewComponent implements OnInit {
                     this.projectDescription = this.currentProject['translations'][0]['description'];
                     // this.projectDescription = this.sanitizeHtml(this.currentProject['translations']['description'].replace(/(http.*)[ .]/, '<a href="$1" target="_blank" rel="noopener noreferrer">LINK</a> '));
 
-
+                    for (let action in this.currentProject['actions']){
+                        console.log('action: ', this.currentProject['actions'][action])
+                        this.actionsListSlider.push(this.currentProject['actions'][action])
+                    }
                     // this.politicianService
                     //     .getAllByProject(p.slug, true)
                     //     .then(response => {

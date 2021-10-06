@@ -1,10 +1,11 @@
 import { Component, Input, OnInit, AfterViewChecked } from '@angular/core';
-import { Politician } from '../../model/politician';
+import { Action } from '../../model/action';
 import { Project } from '../../model/project';
 import { ConfigService } from '../../services/config.service';
 import { ProjectService } from '../../services/project.service';
 import { environment } from '../../../environments/environment';
 import { TranslateService } from "@ngx-translate/core";
+import { Campaign } from '../../model/campaign';
 
 
 @Component({
@@ -14,40 +15,41 @@ import { TranslateService } from "@ngx-translate/core";
 })
 export class PoliticianCardComponent implements OnInit {
 
-    @Input() politician: Politician;
-    @Input() set project(value: Project) {
-        this._project = value;
-        if (this._project.name) {
-            //si la stance nunca se definió en el backend el forEach de abajo nunca llega y queda vacía
-            this.stance = 'NoConfirmado';
-            this.stance_postura = 'No confirmado';
-            this.politician.stances.forEach(stance => {
-                if (stance.project_id === this._project.id) {
-                    this.stance = stance.name;
-                    this.stance_id = stance.id;
+    @Input() action: Action;
+    @Input() project: Campaign;
+    // @Input() set project(value: Project) {
+    //     this._project = value;
+    //     if (this._project.name) {
+    //         //si la stance nunca se definió en el backend el forEach de abajo nunca llega y queda vacía
+    //         this.stance = 'NoConfirmado';
+    //         this.stance_postura = 'No confirmado';
+    //         this.politician.stances.forEach(stance => {
+    //             if (stance.project_id === this._project.id) {
+    //                 this.stance = stance.name;
+    //                 this.stance_id = stance.id;
 
-                    let postura = '';
-                    switch (stance.name) {
-                      case 'AFavor':
-                        postura = 'A favor';
-                        break;
-                      case 'EnContra':
-                        postura = 'En contra';
-                        break;
-                      case 'SeAbstiene':
-                        postura = 'Se abstiene';
-                        break;
-                      case 'NoConfirmado':
-                      case 'SinDefinir':
-                      default:
-                        postura = 'No confirmado';
-                        break;
-                    }
-                    this.stance_postura = postura;
-                }
-            });
-        }
-    }
+    //                 let postura = '';
+    //                 switch (stance.name) {
+    //                   case 'AFavor':
+    //                     postura = 'A favor';
+    //                     break;
+    //                   case 'EnContra':
+    //                     postura = 'En contra';
+    //                     break;
+    //                   case 'SeAbstiene':
+    //                     postura = 'Se abstiene';
+    //                     break;
+    //                   case 'NoConfirmado':
+    //                   case 'SinDefinir':
+    //                   default:
+    //                     postura = 'No confirmado';
+    //                     break;
+    //                 }
+    //                 this.stance_postura = postura;
+    //             }
+    //         });
+    //     }
+    // }
 
     public _project: Project;
     public imgUrl: string;
@@ -63,43 +65,45 @@ export class PoliticianCardComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        this.imgUrl = environment.imgBase + this.politician.dir + '/box-' + this.politician.image;
+        this.imgUrl = environment.imgBase + this.action['actions_id']['icon']['id'];
+        console.log('icon ',this.action['actions_id'])
         this.showWhatsappHelp = false;
     }
 
     public openTwitterWindow(): void {
-        this.tallyUp();
-        const randomTweet = this.getRandomMessage().replace(/@([^a-zA-Z0-9]|$)/g, '@' + this.politician.twitter + '$1');
-        window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(randomTweet), '_blank');
+        // this.tallyUp();
+        // const randomTweet = this.getRandomMessage().replace(/@([^a-zA-Z0-9]|$)/g, '@' + this.politician.twitter + '$1');
+        
+        // window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(randomTweet), '_blank');
     }
 
     public generateRandomMessage(): void {
-        this.randomMessage = this.getRandomMessage().replace(/@([^a-zA-Z0-9]|$)/g, this.politician.first_name + ' ' + this.politician.last_name + '$1');
+        // this.randomMessage = this.getRandomMessage().replace(/@([^a-zA-Z0-9]|$)/g, this.politician.first_name + ' ' + this.politician.last_name + '$1');
     }
 
     public openFacebookWindow(): void {
-        this.tallyUp();
-        window.open(`https://facebook.com/${this.politician.facebook}`, '_blank');
-    }
+    //     this.tallyUp();
+    //     window.open(`https://facebook.com/${this.politician.facebook}`, '_blank');
+     }
 
     public openInstagramWindow(): void {
-        this.tallyUp();
-        window.open(`https://instagram.com/${this.politician.instagram}`, '_blank');
+        // this.tallyUp();
+        // window.open(`https://instagram.com/${this.politician.instagram}`, '_blank');
     }
 
     public getRandomMessage(): string {
-        let stanceTweets: Array<any>;
-        stanceTweets = this._project.stances.filter(stance => stance.id === this.stance_id);
-        if (!stanceTweets.length)
-          stanceTweets = this._project.stances.filter(stance => stance.name === 'NoConfirmado');
-        let length = stanceTweets.length;
-        if (length > 0) {
-            stanceTweets = stanceTweets[0].tweets;
-            length = stanceTweets.length;
-            const index = Math.floor(Math.random() * length);
-            return stanceTweets[index].text;
-        }
-        return '';
+        // let stanceTweets: Array<any>;
+        // stanceTweets = this._project.stances.filter(stance => stance.id === this.stance_id);
+        // if (!stanceTweets.length)
+        //   stanceTweets = this._project.stances.filter(stance => stance.name === 'NoConfirmado');
+        // let length = stanceTweets.length;
+        // if (length > 0) {
+        //     stanceTweets = stanceTweets[0].tweets;
+        //     length = stanceTweets.length;
+        //     const index = Math.floor(Math.random() * length);
+        //     return stanceTweets[index].text;
+        // }
+         return '';
     }
     public encode(url:string) : string { 
         return encodeURIComponent(url);

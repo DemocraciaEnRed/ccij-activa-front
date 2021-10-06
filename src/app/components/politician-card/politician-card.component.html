@@ -1,28 +1,31 @@
 <div class="politician-card">
     <div class="card-image-container pt-3">
-        <img [src]="imgUrl" class=" img-fluid img-thumbnail card-img-top " alt="{{politician.first_name + ' ' + politician.last_name || '...'}}">
+        <img [src]="imgUrl" class=" img-fluid img-thumbnail card-img-top " alt="{{action['actions_id']['name'] || '...'}}">
     </div>
-    <div class="card-body {{stance}}">
-      <ng-template [ngIf]="!_project.es_debate">
+    <div class="card-body ">
+      <!-- <ng-template [ngIf]="!_project.es_debate">
           <span class="postura px-4 py-1">{{stance_postura}}</span>
-      </ng-template>
-        <span class="title mt-2">{{politician.first_name}} {{politician.last_name}}</span>
-        <span class="subtitle">{{politician.position && politician.position.name}}</span>
-        <span class="subtitle">{{politician.party.name}}</span>
+      </ng-template> -->
+        <span class="title mt-2">{{action['actions_id']['name']}} </span>
+        <!-- <span class="subtitle">{{action.position && action.position.name}}</span>-->
+        <span class="subtitle">{{action['translations']['descripction']}}</span> 
         <div class="button-container mt-auto px-4">
-            <!-- <button *ngIf="politician.twitter" type="button" class="contact-button" (click)="openTwitterWindow()">
+            <button *ngIf="action['actions_id']['name'].toLowerCase() == 'twitter'" type="button" class="contact-button" (click)="openTwitterWindow()">
                 <i class="fab fa-twitter"></i>&emsp;Twittear
             </button>
-            <button *ngIf="politician.facebook" type="button" class="contact-button" (click)="generateRandomMessage()" data-toggle="modal" [attr.data-target]="'#facebookModal' + politician.id">
+            <button *ngIf="action['actions_id']['name'].toLowerCase() == 'facebook'" type="button" class="contact-button" (click)="generateRandomMessage()" data-toggle="modal" [attr.data-target]="'#facebookModal' + action.id">
                 <i class="fab fa-facebook-f"></i>&emsp;Facebook
             </button>
-            <button *ngIf="politician.instagram" type="button" class="contact-button" (click)="generateRandomMessage()" data-toggle="modal" [attr.data-target]="'#instagramModal' + politician.id">
+            <button *ngIf="action['actions_id']['name'].toLowerCase() == 'instagram'" type="button" class="contact-button" (click)="generateRandomMessage()" data-toggle="modal" [attr.data-target]="'#instagramModal' + action.id">
                 <i class="fab fa-instagram"></i>&emsp;Instagram
             </button>
-            <button *ngIf="politician.phone" type="button" class="contact-button" data-toggle="modal" (click)="generateRandomMessage()" [attr.data-target]="'#callModal' + politician.id">
+            <button *ngIf="action['actions_id']['name'].toLowerCase() == 'telegram'" type="button" class="contact-button" (click)="generateRandomMessage()" data-toggle="modal" [attr.data-target]="'#instagramModal' + action.id">
+                <i class="fab fa-instagram"></i>&emsp;Telegram
+            </button>
+            <button *ngIf="action['actions_id']['name'].toLowerCase() == 'call'" type="button" class="contact-button" data-toggle="modal" (click)="generateRandomMessage()" [attr.data-target]="'#callModal' + action.id">
                 <i class="fas fa-phone"></i>&emsp;Llamar
-            </button> -->
-            <button *ngIf="politician.phone" type="button" class=" btn-rectangular" data-toggle="modal" (click)="generateRandomMessage()" [attr.data-target]="'#whatsappModal' + politician.id">
+            </button>
+            <button *ngIf="action['actions_id']['name'].toLowerCase() == 'telegram'" type="button" class=" btn-rectangular" data-toggle="modal" (click)="generateRandomMessage()" [attr.data-target]="'#whatsappModal' + action.id">
                 <!-- <i class="fab fa-whatsapp"></i>&emsp; -->
                 <!-- "Enviar Twit" -->
                 {{'PCARD.BUTTON' | translate}}
@@ -32,7 +35,7 @@
 </div>
 
 <!-- Modal Facebook -->
-<div class="modal fade" id="facebookModal{{politician.id}}" tabindex="-1" role="dialog" aria-labelledby="Escribir por Facebook" aria-hidden="true">
+<!-- <div class="modal fade" id="facebookModal{{action.id}}" tabindex="-1" role="dialog" aria-labelledby="Escribir por Facebook" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
 
@@ -51,10 +54,10 @@
 
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- Modal Instagram -->
-<div class="modal fade" id="instagramModal{{politician.id}}" tabindex="-1" role="dialog" aria-labelledby="Escribir por Instagram" aria-hidden="true">
+<!-- <div class="modal fade" id="instagramModal{{action.id}}" tabindex="-1" role="dialog" aria-labelledby="Escribir por Instagram" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
 
@@ -73,10 +76,10 @@
 
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- Modal LLamada -->
-<div class="modal fade" id="callModal{{politician.id}}" tabindex="-1" role="dialog" aria-labelledby="Llamar" aria-hidden="true">
+<!-- <div class="modal fade" id="callModal{{action.id}}" tabindex="-1" role="dialog" aria-labelledby="Llamar" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-body">
@@ -85,20 +88,20 @@
                 </button>
                 <div>
                     Puedes probar llamarlo al siguiente número: <br>
-                    <div class="example-message py-2 px-3 my-4">{{politician.phone}}</div>
+                    <div class="example-message py-2 px-3 my-4">{{action.phone}}</div>
                     <br>Te dejamos una idea para que te inspires: <br>
                     <div class="example-message py-2 px-3 my-4">{{randomMessage}}</div>
                 </div>
             </div>
             <div class="modal-footer">
-                <a (click)="tallyUp()" href="tel:{{politician.phone}}" class="btn btn-primary btn-aec btn-center">Llamar</a>
+                <a (click)="tallyUp()" href="tel:{{action.phone}}" class="btn btn-primary btn-aec btn-center">Llamar</a>
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- Modal LLamada -->
-<div class="modal fade" id="whatsappModal{{politician.id}}" tabindex="-1" role="dialog" aria-labelledby="Llamar" aria-hidden="true">
+<!-- <div class="modal fade" id="whatsappModal{{action.id}}" tabindex="-1" role="dialog" aria-labelledby="Llamar" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-body">
@@ -111,7 +114,7 @@
                     <div class="example-message py-2 px-3 my-4">{{randomMessage}}</div>
                     <p>¡No te preocupes, vas a poder editar o agregar más texto al mensaje antes de mandarlo!</p>
                 </div>
-                <p><a (click)="tallyUp()" href="https://wa.me/{{politician.phone.replace('+','').replace(' ', '')}}?text={{encode(randomMessage)}}" target="_blank" class="btn btn-primary btn-aec btn-center">Abrir Whatsapp <i class="fab fa-whatsapp"></i></a><p>
+                <p><a (click)="tallyUp()" href="https://wa.me/{{action.phone.replace('+','').replace(' ', '')}}?text={{encode(randomMessage)}}" target="_blank" class="btn btn-primary btn-aec btn-center">Abrir Whatsapp <i class="fab fa-whatsapp"></i></a><p>
             <p><a (click)="toggleWhatsappHelp()" class="text-primary text-bold" style="cursor: pointer;">Ver como funciona <i class="fas fa-angle-down"></i></a></p>
             <div class="text-center" *ngIf="showWhatsappHelp">
                     <p>Cuando aprietes el boton de "Abrir Whatsapp" se abrira la siguiente pantalla en tu navegador (Tanto movil como en PC)</p>
@@ -125,4 +128,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
