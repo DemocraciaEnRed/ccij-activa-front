@@ -66,6 +66,8 @@ export class PoliticianCardComponent implements OnInit {
     public ngOnInit(): void {
         this.imgUrl = environment.imgBase + this.action['actions_id']['icon']['id'];
         this.showWhatsappHelp = false;
+        this.getRandomMessage();
+        
     }
 
     public openTwitterWindow(): void {
@@ -78,7 +80,10 @@ export class PoliticianCardComponent implements OnInit {
     public generateRandomMessage(): void {
         // this.randomMessage = this.getRandomMessage().replace(/@([^a-zA-Z0-9]|$)/g, this.politician.first_name + ' ' + this.politician.last_name + '$1');
     }
-
+    public openURL (): void {
+        window.open(this.action['translations'][0]['call_to_action_url'], '_blank');
+        console.log("url>", this.action['translations'][0]['call_to_action_url'] )
+    }
     public openFacebookWindow(): void {
     //     this.tallyUp();
         window.open(this.action['translations'][0]['call_to_action_url'], '_blank');
@@ -89,7 +94,7 @@ export class PoliticianCardComponent implements OnInit {
         window.open(this.action['translations'][0]['call_to_action_url'], '_blank');
     }
 
-    public getRandomMessage(): string {
+    public getRandomMessage()  {
         // let stanceTweets: Array<any>;
         // stanceTweets = this._project.stances.filter(stance => stance.id === this.stance_id);
         // if (!stanceTweets.length)
@@ -101,7 +106,9 @@ export class PoliticianCardComponent implements OnInit {
         //     const index = Math.floor(Math.random() * length);
         //     return stanceTweets[index].text;
         // }
-         return 'falta definir ';
+        this.randomMessage= this.action['translations'][0]['suggested_text']
+        // console.log(this.action['translations'][0]['name'],' : ',this.action['translations'][0]['suggested_text'])
+        
     }
     public encode(url:string) : string { 
         return encodeURIComponent(url);

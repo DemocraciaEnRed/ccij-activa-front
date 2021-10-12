@@ -82,6 +82,7 @@ export class CampaignsService {
             description
             call_to_action_url
             call_to_action_label
+            suggested_text
           }
         }
       }

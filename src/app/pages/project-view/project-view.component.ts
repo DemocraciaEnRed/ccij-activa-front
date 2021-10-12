@@ -57,7 +57,7 @@ export class ProjectViewComponent implements OnInit {
                     this.projectImage = this.backgroundAux;
 
                     this.projectDescription = this.currentProject['translations'][0]['description'];
-                    // this.projectDescription = this.sanitizeHtml(this.currentProject['translations']['description'].replace(/(http.*)[ .]/, '<a href="$1" target="_blank" rel="noopener noreferrer">LINK</a> '));
+                    // this.projectDescription = this.sanitizeHtml(this.currentProject['translations'][0]['description'].replace(/(http.*)[ .]/, '<a href="$1" target="_blank" rel="noopener noreferrer">LINK</a> '));
 
                     for (let action in this.currentProject['actions']){
                         this.actionsListSlider.push(this.currentProject['actions'][action])

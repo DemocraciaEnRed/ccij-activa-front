@@ -9,17 +9,17 @@
     </div>
 </div>
 
-<slider >
+<slider > 
     <ng-template ngFor let-politician [ngForOf]="politiciansList">
         <politician-card [project]="project" [action]="politician"></politician-card>
     </ng-template>
 </slider>
 
-<ng-template [ngIf]="!project.es_debate || (politiciansList && politiciansList.length > 6)">
+<!-- <ng-template [ngIf]="!project.es_debate || (politiciansList && politiciansList.length > 6)">
   <div class="container">
       <div class="row full-list-strip">
           <div class="col-12">
           </div>
       </div>
   </div>
-</ng-template>
+</ng-template> -->

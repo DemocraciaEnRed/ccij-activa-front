@@ -60,7 +60,14 @@
     }
   },
   "PCARD":{
-    "BUTTON": "Send Twit"
+    "BUTTON": "Send Twit",
+    "MODALS": {
+      "FACEBOOK":"We leave you a text suggestion to write to him. You can write him a private message or write him on the wall (whatever you prefer):",
+      "TELEGRAM":"You can start the chat with this message: Don't worry, you will be able to edit or add more text to the message before sending it!",
+      "INSTAGRAM":"We leave you a text suggestion to write to him. You can write him a private message or write him on the wall (whatever you prefer):",
+      "WHATSAPP":" Click on the button and you will be able to send him a message by WhatsApp!  You can start the chat with this message:  Don't worry, you will be able to edit or add more text to the message before sending it! ",
+      "CALL":"You can try calling him at the following number: "
+    }
   },
   "S-VIDEO": "Informative videos",
   "S-POLITICIAN": "Contact us to activate the campaign!",

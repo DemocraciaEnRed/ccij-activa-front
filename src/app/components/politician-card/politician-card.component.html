@@ -22,19 +22,26 @@
                 <!-- <i class="fab fa-instagram"></i>&emsp; -->
                 {{action['translations'][0]['call_to_action_label']}}
             </button>
-            <button *ngIf="action['actions_id']['name'].toLowerCase() == 'telegram'" type="button" class="contact-button" (click)="generateRandomMessage()" data-toggle="modal" [attr.data-target]="'#instagramModal' + action['actions_id']['name']">
-                <!-- <i class="fab fa-instagram"></i>&emsp; -->
+            <button *ngIf="action['actions_id']['name'].toLowerCase() == 'telegram'" type="button" class="contact-button" (click)="generateRandomMessage()" data-toggle="modal" [attr.data-target]="'#telegramModal' + action['actions_id']['name']">
+                <!-- <i class="fab fa-telegram"></i>&emsp; -->
                 {{action['translations'][0]['call_to_action_label']}}
             </button>
             <button *ngIf="action['actions_id']['name'].toLowerCase() == 'call'" type="button" class="contact-button" data-toggle="modal" (click)="generateRandomMessage()" [attr.data-target]="'#callModal' + action['actions_id']['name']">
                 <!-- <i class="fas fa-phone"></i>&emsp; -->
                 {{action['translations'][0]['call_to_action_label']}}
             </button>
-            <!-- <button *ngIf="action['actions_id']['name'].toLowerCase() == 'call'" type="button" class=" btn-rectangular" data-toggle="modal" (click)="generateRandomMessage()" [attr.data-target]="'#whatsappModal' + action.id">
-                 <i class="fab fa-whatsapp"></i>&emsp; -->
+            <button *ngIf="action['actions_id']['name'].toLowerCase() == 'whatsapp'" type="button" class=" btn-rectangular" data-toggle="modal" (click)="generateRandomMessage()" [attr.data-target]="'#whatsappModal' + action['actions_id']['name']">
+                 <!-- <i class="fab fa-whatsapp"></i>&emsp;  -->
+                 {{action['translations'][0]['call_to_action_label']}}
                 <!-- "Enviar Twit" 
-                {{'PCARD.BUTTON' | translate}}
-            </button> -->
+                {{'PCARD.BUTTON' | translate}}-->
+            </button>
+            <button *ngIf="action['actions_id']['name'].toLowerCase() == 'linkedin'" type="button" class=" btn-rectangular"  (click)="openURL()" >
+                <!-- <i class="fab fa-whatsapp"></i>&emsp;  -->
+                {{action['translations'][0]['call_to_action_label']}}
+               <!-- "Enviar Twit" 
+               {{'PCARD.BUTTON' | translate}}-->
+           </button>
         </div>
     </div>
 </div>
@@ -49,7 +56,8 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <div>
-                    Te dejamos una sugerencia de texto para escribirle. Puedes escribirle un mensaje privado o escribirle en el muro (lo que prefieras): <br>
+                    {{'PCARD.MODALS.FACEBOOK' | translate}}
+                    <BR>
                     <div class="example-message py-2 px-3 my-4">{{randomMessage}}</div>
                 </div>
             </div>
@@ -71,12 +79,36 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <div>
-                    Te dejamos una sugerencia de texto para escribirle. Puedes escribirle un mensaje privado o escribirle en el muro (lo que prefieras): <br>
+                    {{'PCARD.MODALS.INSTAGRAM' | translate }}
+                    <br>
                     <div class="example-message py-2 px-3 my-4">{{randomMessage}}</div>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" (click)="openInstagramWindow()" class="btn btn-primary btn-aec btn-center"><i class="fab fa-instagram"></i>&emsp;Ir a su Instagram</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal telegram -->
+<div class="modal fade" id="telegramModal{{action['actions_id']['name']}}" tabindex="-1" role="dialog" aria-labelledby="Escribir por Instagram" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div>
+                    {{'PCARD.MODALS.TELEGRAM' | translate }}
+                    <br>
+                    <div class="example-message py-2 px-3 my-4">{{randomMessage}}</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" (click)="openInstagramWindow()" class="btn btn-primary btn-aec btn-center"><i class="fab fa-telegram"></i>&emsp;TelEgram</button>
             </div>
 
         </div>
@@ -92,20 +124,18 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
                 <div>
-                    Puedes probar llamarlo al siguiente número: <br>
-                    <div class="example-message py-2 px-3 my-4">DEFINIR LO DE LA LLAMADA</div>
-                    <br>Te dejamos una idea para que te inspires: <br>
+                    {{'PCARD.MODALS.CALL' | translate}}<br>
                     <div class="example-message py-2 px-3 my-4">{{randomMessage}}</div>
                 </div>
             </div>
-            <div class="modal-footer">
+            <!-- <div class="modal-footer">
                 <a (click)="tallyUp()" href="tel:{{action['actions_id']['name']}}" class="btn btn-primary btn-aec btn-center">Llamar</a>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
 
-<!-- Modal LLamada -->
+<!-- Modal whatsapp -->
  <div class="modal fade" id="whatsappModal{{action['actions_id']['name']}}" tabindex="-1" role="dialog" aria-labelledby="Llamar" aria-hidden="true"> -->
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -114,10 +144,13 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
                 <div>
-                    <p>¡Hacé clic en el botón y vas a poder enviarle un mensaje por Whatsapp!</p>
-                    <p>Podes comenzar la charla con este mensaje:</p>
+                    <p>
+                        {{'PCARD.MODALS.WHATSAPP' | translate }}
+                    </p>
+                    
+
                     <div class="example-message py-2 px-3 my-4">{{randomMessage}}</div>
-                    <p>¡No te preocupes, vas a poder editar o agregar más texto al mensaje antes de mandarlo!</p>
+
                 </div>
                 <!-- <p><a (click)="tallyUp()" href="https://wa.me/{{action.phone.replace('+','').replace(' ', '')}}?text={{encode(randomMessage)}}" target="_blank" class="btn btn-primary btn-aec btn-center">Abrir Whatsapp <i class="fab fa-whatsapp"></i></a><p> -->
             <p><a (click)="toggleWhatsappHelp()" class="text-primary text-bold" style="cursor: pointer;">Ver como funciona <i class="fas fa-angle-down"></i></a></p>

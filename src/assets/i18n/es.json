@@ -58,7 +58,15 @@
     }
   },
   "PCARD":{
-    "BUTTON": "Enviar Twit"
+    "BUTTON": "Enviar Twit",
+    "MODALS": {
+      "FACEBOOK":"Te dejamos una sugerencia de texto para escribirle. Puedes escribirle un mensaje privado o escribirle en el muro (lo que prefieras):",
+      "TELEGRAM":"Podes comenzar la charla con este mensaje:  ¡No te preocupes, vas a poder editar o agregar más texto al mensaje antes de mandarlo! ",
+      "INSTAGRAM":"Te dejamos una sugerencia de texto para escribirle. Puedes escribirle un mensaje privado o escribirle en el muro (lo que prefieras):",
+      "WHATSAPP":"¡Hacé clic en el botón y vas a poder enviarle un mensaje por Whatsapp!. Podes comenzar la charla con este mensaje:  ¡No te preocupes, vas a poder editar o agregar más texto al mensaje antes de mandarlo!",
+      "CALL":"Puedes probar llamarlo al siguiente número: "
+    }
+
   },
   "S-VIDEO": "Videos informativos",
   "S-POLITICIAN": "¡Comunícate para activar la campaña!",
