@@ -46,6 +46,10 @@
       "TITLE": "We use coordination, advocacy, and legal services to fight for the liberation of immigrants in detention"
     }
   },
+  "SOCIALCARD":{
+    "TEXT":"You can contact us by any of the following means:",
+    "BUTTON":"CLOSE"
+  },
   "PROJECT":{
     "TITLE": "HOLA",
     "STATIC": {

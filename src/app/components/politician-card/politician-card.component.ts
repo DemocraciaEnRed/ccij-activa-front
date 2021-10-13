@@ -112,7 +112,6 @@ export class PoliticianCardComponent implements OnInit {
         }else {
             this.randomMessage='not suggested text for this action'
         }
-        console.log(this.action['actions_id']['name'],' RANDOMmENSAGGE:' ,this.randomMessage)
 
         // console.log(this.action['translations'][0]['name'],' : ',this.action['translations'][0]['suggested_text'])
         
