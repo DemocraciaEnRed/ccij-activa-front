@@ -8,12 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
-import { HttpService } from './services/http.service';
-import { PartyService } from './services/party.service';
 import { ConfigService } from './services/config.service';
-import { ProjectService } from './services/project.service';
-import { DistrictService } from './services/district.service';
-import { PoliticianService } from './services/politician.service';
 import { PathLocationStrategy, LocationStrategy } from '@angular/common';
 import { ProjectLinkComponent } from './components/project-link/project-link.component';
 
@@ -34,7 +29,6 @@ import { ProjectViewComponent } from './pages/project-view/project-view.componen
 import { ProjectCardComponent } from './components/project-card/project-card.component';
 import { MainComponent } from './pages/main/main.component';
 import { VideoSliderComponent } from './components/video-slider/video-slider.component';
-import { PropuestaSliderComponent } from './components/propuesta-slider/propuesta-slider.component';
 import { ArticleComponent } from './components/article/article.component';
 import { FaqsComponent } from './pages/faqs/faqs.component';
 //import 'angular-carousel';
@@ -57,7 +51,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     FooterComponent,
     ProjectViewComponent,
     VideoSliderComponent,
-    PropuestaSliderComponent,
     ArticleComponent,
     MainComponent,
     ProjectCardComponent,
@@ -87,12 +80,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     })
   ],
   providers: [
-    HttpService,
-    PartyService,
     ConfigService,
-    ProjectService,
-    DistrictService,
-    PoliticianService,
     {provide: LocationStrategy, useClass: PathLocationStrategy},
     AxiosService,
     CampaignsService

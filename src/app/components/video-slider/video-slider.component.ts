@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Project } from '../../model/project';
+import { Campaign } from '../../model/campaign';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
@@ -9,7 +9,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class VideoSliderComponent {
 
-    @Input() project: Project;
+    @Input() project: Campaign;
 
     constructor(private sanitizer: DomSanitizer) {
     }

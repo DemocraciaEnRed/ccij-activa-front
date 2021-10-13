@@ -4,10 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 // import { ProjectService } from '../../services/project.service';
 // import { Politician } from '../../model/politician';
 // import { PoliticianService } from '../../services/politician.service';
-import { Party } from '../../model/party';
-import { PartyService } from '../../services/party.service';
-import { District } from '../../model/district';
-import { DistrictService } from '../../services/district.service';
+
 import { environment } from '../../../environments/environment';
 
 @Component({
@@ -23,14 +20,13 @@ export class FullListComponent {
     public selectedPosition = 'Todas';
     public selectedParty = 'Todos';
     public selectedDistrict = 'Todos';
-    public partiesOptions = new Array<Party>();
-    public districtsOptions = new Array<District>();
+    // public partiesOptions = new Array<Party>();
+    // public districtsOptions = new Array<District>();
 
     constructor(private route: ActivatedRoute,
         // private projectService: ProjectService,
         // private politicianService: PoliticianService,
-        private partyService: PartyService,
-        private districtService: DistrictService) {
+        ) {
         // this.route.paramMap.subscribe(params => {
         //     this.projectService
         //         .getById(params['params']['id'])

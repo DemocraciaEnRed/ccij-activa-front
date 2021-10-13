@@ -1,5 +1,5 @@
 import { Component, Input, AfterViewInit, ElementRef, OnInit } from '@angular/core';
-import { Project } from '../../model/project';
+import { Campaign } from '../../model/campaign';
 import * as $ from 'jquery';
 
 @Component({

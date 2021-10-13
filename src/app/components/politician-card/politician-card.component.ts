@@ -1,6 +1,5 @@
 import { Component, Input, OnInit, AfterViewChecked } from '@angular/core';
 import { Action } from '../../model/action';
-import { Project } from '../../model/project';
 import { ConfigService } from '../../services/config.service';
 import { environment } from '../../../environments/environment';
 import { TranslateService } from "@ngx-translate/core";
@@ -50,7 +49,6 @@ export class PoliticianCardComponent implements OnInit {
     //     }
     // }
 
-    public _project: Project;
     public imgUrl: string;
     public stance: string;
     public stance_id: Number;
