@@ -33,15 +33,31 @@
             <button *ngIf="action['actions_id']['name'].toLowerCase() == 'whatsapp'" type="button" class=" btn-rectangular" data-toggle="modal" (click)="generateRandomMessage()" [attr.data-target]="'#whatsappModal' + action['actions_id']['name']">
                  <!-- <i class="fab fa-whatsapp"></i>&emsp;  -->
                  {{action['translations'][0]['call_to_action_label']}}
-                <!-- "Enviar Twit" 
-                {{'PCARD.BUTTON' | translate}}-->
+               
             </button>
             <button *ngIf="action['actions_id']['name'].toLowerCase() == 'linkedin'" type="button" class=" btn-rectangular"  (click)="openURL()" >
                 <!-- <i class="fab fa-whatsapp"></i>&emsp;  -->
                 {{action['translations'][0]['call_to_action_label']}}
-               <!-- "Enviar Twit" 
-               {{'PCARD.BUTTON' | translate}}-->
+              
            </button>
+           <button *ngIf="action['actions_id']['name'].toLowerCase() == 'email'" type="button" class=" btn-rectangular"  data-toggle="modal" (click)="generateRandomMessage()" [attr.data-target]="'#emailModal' + action['actions_id']['name']" >
+                <!-- <i class="fab fa-whatsapp"></i>&emsp;  -->
+                {{action['translations'][0]['call_to_action_label']}}
+            </button>
+            <button *ngIf="action['actions_id']['name'].toLowerCase() == 'p.o. box' " type="button" class=" btn-rectangular"  data-toggle="modal" (click)="generateRandomMessage()" [attr.data-target]="'#poboxModal'" >
+                <!-- <i class="fab fa-whatsapp"></i>&emsp;  -->
+                {{action['translations'][0]['call_to_action_label']}}
+            </button>
+            <button *ngIf="action['actions_id']['name'].toLowerCase() == 'complete form'" type="button" class=" btn-rectangular"  (click)="openURL()" >
+                <!-- <i class="fab fa-whatsapp"></i>&emsp;  -->
+                {{action['translations'][0]['call_to_action_label']}}
+            
+            </button>
+            <button *ngIf="action['actions_id']['name'].toLowerCase() == 'sign petition'" type="button" class=" btn-rectangular"  (click)="openURL()" >
+                <!-- <i class="fab fa-whatsapp"></i>&emsp;  -->
+                {{action['translations'][0]['call_to_action_label']}}
+            
+            </button>
         </div>
     </div>
 </div>
@@ -136,7 +152,7 @@
 </div>
 
 <!-- Modal whatsapp -->
- <div class="modal fade" id="whatsappModal{{action['actions_id']['name']}}" tabindex="-1" role="dialog" aria-labelledby="Llamar" aria-hidden="true"> -->
+ <div class="modal fade" id="whatsappModal{{action['actions_id']['name']}}" tabindex="-1" role="dialog" aria-labelledby="mandar un whatsapp" aria-hidden="true"> -->
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-body">
@@ -167,3 +183,51 @@
         </div>
     </div>
 </div> 
+
+
+<!-- Modal email -->
+<div class="modal fade" id="emailModal{{action['actions_id']['name']}}" tabindex="-1" role="dialog" aria-labelledby="Escribir por email" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div>
+                    {{'PCARD.MODALS.EMAIL' | translate }}
+                    <br>
+                    <div class="example-message py-2 px-3 my-4">{{randomMessage}}</div>
+                </div>
+            </div>
+            <!-- <div class="modal-footer">
+                <button type="button" (click)="openInstagramWindow()" class="btn btn-primary btn-aec btn-center"><i class="fab fa-telegram"></i>&emsp;TelEgram</button>
+            </div> -->
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal P.O Box -->
+<div class="modal fade" id="poboxModal" tabindex="-1" role="dialog" aria-labelledby="Escribir por correo postasl" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div>
+                    {{'PCARD.MODALS.POBOX' | translate }}
+                    <br>
+                    <div class="example-message py-2 px-3 my-4">{{randomMessage}}</div>
+                </div>
+            </div>
+            <!-- <div class="modal-footer">
+                <button type="button" (click)="openInstagramWindow()" class="btn btn-primary btn-aec btn-center"><i class="fab fa-email"></i>&emsp;TelEgram</button>
+            </div> -->
+
+        </div>
+    </div>
+</div>
+

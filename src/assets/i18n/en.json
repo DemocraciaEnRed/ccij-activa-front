@@ -66,7 +66,9 @@
       "TELEGRAM":"You can start the chat with this message: Don't worry, you will be able to edit or add more text to the message before sending it!",
       "INSTAGRAM":"We leave you a text suggestion to write to him. You can write him a private message or write him on the wall (whatever you prefer):",
       "WHATSAPP":" Click on the button and you will be able to send him a message by WhatsApp!  You can start the chat with this message:  Don't worry, you will be able to edit or add more text to the message before sending it! ",
-      "CALL":"You can try calling him at the following number: "
+      "CALL":"You can try calling him at the following number: ",
+      "EMAIL": "THIS IS AN EXAMPLE, YOU CAN COPY IT AND PUT IT IN THE BODY OF THE EMAIL",
+      "POBOX": "YOU CAN USE THIS SAMPLE TEXT FOR YOUR LETTER"
     }
   },
   "S-VIDEO": "Informative videos",

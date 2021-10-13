@@ -67,7 +67,6 @@ export class PoliticianCardComponent implements OnInit {
         this.imgUrl = environment.imgBase + this.action['actions_id']['icon']['id'];
         this.showWhatsappHelp = false;
         this.getRandomMessage();
-        
     }
 
     public openTwitterWindow(): void {
@@ -78,11 +77,12 @@ export class PoliticianCardComponent implements OnInit {
     }
 
     public generateRandomMessage(): void {
+        // console.log('gewnerate:' ,this.randomMessage)
         // this.randomMessage = this.getRandomMessage().replace(/@([^a-zA-Z0-9]|$)/g, this.politician.first_name + ' ' + this.politician.last_name + '$1');
     }
     public openURL (): void {
         window.open(this.action['translations'][0]['call_to_action_url'], '_blank');
-        console.log("url>", this.action['translations'][0]['call_to_action_url'] )
+        // console.log("url>", this.action['translations'][0]['call_to_action_url'] )
     }
     public openFacebookWindow(): void {
     //     this.tallyUp();
@@ -106,7 +106,14 @@ export class PoliticianCardComponent implements OnInit {
         //     const index = Math.floor(Math.random() * length);
         //     return stanceTweets[index].text;
         // }
-        this.randomMessage= this.action['translations'][0]['suggested_text']
+        if (this.action['translations'][0]['suggested_text'] ){
+            this.randomMessage= this.action['translations'][0]['suggested_text']
+
+        }else {
+            this.randomMessage='not suggested text for this action'
+        }
+        console.log(this.action['actions_id']['name'],' RANDOMmENSAGGE:' ,this.randomMessage)
+
         // console.log(this.action['translations'][0]['name'],' : ',this.action['translations'][0]['suggested_text'])
         
     }

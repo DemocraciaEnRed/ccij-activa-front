@@ -64,7 +64,9 @@
       "TELEGRAM":"Podes comenzar la charla con este mensaje:  ¡No te preocupes, vas a poder editar o agregar más texto al mensaje antes de mandarlo! ",
       "INSTAGRAM":"Te dejamos una sugerencia de texto para escribirle. Puedes escribirle un mensaje privado o escribirle en el muro (lo que prefieras):",
       "WHATSAPP":"¡Hacé clic en el botón y vas a poder enviarle un mensaje por Whatsapp!. Podes comenzar la charla con este mensaje:  ¡No te preocupes, vas a poder editar o agregar más texto al mensaje antes de mandarlo!",
-      "CALL":"Puedes probar llamarlo al siguiente número: "
+      "CALL":"Puedes probar llamarlo al siguiente número: ",
+      "EMAIL": "ESTE ES UN EJEMPLO, PUEDES COPIARLO Y PONERLO EN EL CUERPO DEL CORREO ELECTRONICO ",
+      "POBOX": "PUEDE USAR ESTE TEXTO DE EJEMPLO PARA TU CARTA"
     }
 
   },
