@@ -1,0 +1,101 @@
+{
+  "HEADER": {
+    "TITLE": "CCIJ - Español",
+    "SUBTITLE": "'No estoy aceptando las cosas que no puedo cambiar, estoy cambiando las cosas que no puedo aceptar.' \n - Angela Davis",
+    "NAV":{
+      "HOME": "Home",
+      "CAMPAINGS": "Campaings",
+      "FAQS": "FAQs",
+      "OURJOB": "Our job",
+      "CONTACT": "Contact CCIJ",
+      "ES": "ES",
+      "EN": "EN"
+    },
+    "HERO":{
+      "DEFAULT":{
+        "TITLE": "Liberation campaigns accessible to the community",
+        "BUTTON": "view site"
+      }
+    }
+  },
+  "HOME": {},
+  "FOOTER":{
+    "NETWORKS": "Our Networks",
+    "PROJECTS": "Our Campaings",
+    "VIEW_SITE": "view site"
+  },
+  "MAIN": {
+    "TITLE": "A platform that brings together, promotes and empowers our community's calls to action to end immigration detention while raising the voices of migrants previously and currently detained by the immigration.",
+    "OURJOB": "Know our work",
+    "KNOW": "know us",
+    "HIGNLIGHTED":{
+      "INSTRCTIONS": "When you click on the buttons below the congressmen you will be able to contact them directly and ask them to support our causes (or tell them what you want). Below you can find more information about our common causes. The electoral agenda is defined by us. Join."
+    },
+    "PROJECTS": {
+      "TITLE": "Know our campaings",
+      "SUBTITLE": "Ingresa a cada una de las campañas para obtener más información y activar a lxs congresistas."
+    },
+    "PROJECT_CARD":{
+      "ACTIVATE": "Get Involved",
+      "BUTTON": "SEE MORE"
+    },
+    "ALL_PROJECTS": "See all campaings",
+    "NOT_PROJECTS": "not available",
+
+    "CORE_VALUES": {
+      "TITLE": "We use coordination, advocacy, and legal services to fight for the liberation of immigrants in detention"
+    }
+  },
+  "SOCIALCARD":{
+    "TEXT":"You can contact us by any of the following means:",
+    "BUTTON":"CLOSE"
+  },
+  "PROJECT":{
+    "TITLE": "HOLA",
+    "STATIC": {
+      "VOICE": "Your voice is very important to generate impact, choose how you want to help and join. What are you waiting for? (You could put 1 more sentence with the info)",
+      "COMUNICATION": "Choose the communication medium of your choice and activate the campaign!",
+      "KNOW": "Learn more about immigration detention and public health",
+      "HELP": "Do you want to help with this campaign?",
+      "B-ACTIVE": "activate campaing",
+      "MORECAMPAING": "see more campaings",
+      "DEF_TEXT_LINK": "see more"
+
+    }
+  },
+  "PCARD":{
+    "BUTTON": "Send Twit",
+    "MODALS": {
+      "FACEBOOK":"We leave you a text suggestion to write to him. You can write him a private message or write him on the wall (whatever you prefer):",
+      "TELEGRAM":"You can start the chat with this message: Don't worry, you will be able to edit or add more text to the message before sending it!",
+      "INSTAGRAM":"We leave you a text suggestion to write to him. You can write him a private message or write him on the wall (whatever you prefer):",
+      "WHATSAPP":" Click on the button and you will be able to send him a message by WhatsApp!  You can start the chat with this message:  Don't worry, you will be able to edit or add more text to the message before sending it! ",
+      "CALL":"You can try calling him at the following number: ",
+      "EMAIL": "THIS IS AN EXAMPLE, YOU CAN COPY IT AND PUT IT IN THE BODY OF THE EMAIL",
+      "POBOX": "YOU CAN USE THIS SAMPLE TEXT FOR YOUR LETTER"
+    }
+  },
+  "S-VIDEO": "Informative videos",
+  "S-POLITICIAN": "Contact us to activate the campaign!",
+  "VOTE":{
+    "COUNT":"The vote count",
+    "FAVOR": "IN FAVOR",
+    "AGAINST": "AGAINST",
+    "NOTCONF": "NOT OCNFIRMED",
+    "ABSTAINS": "ABSTAINS"
+  },
+  "TALLY": "{{number}} messages have already been sent to support",
+  "FAQS":{
+    "EPIGRAPH": "If you are in doubt about our campaigns, we invite you to read below information that will be useful to you.",
+    "AQS": {
+      "Q1":"What information should I include in my mails/calls to targets?",
+      "A1": "You should include your full name and a personalized message. You can use our templates to get a sense of what you can write, but if possible, make sure the text you include is written in your own words so whoever receives it knows there is an individual writing the message. If you’re supporting a detained individual with your message, you should include their name and A number.",
+      "Q2":"What can I do if I want to get more involved in the campaigns?",
+      "A2": "Follow our social media accounts <strong>@ccijustice</strong> for more information on the campaigns we lead and support.",
+      "Q3":"What other ways are there to get involved with the fight for the liberation of immigrants in detention?",
+      "A3": "You can become a one time or recurring donor (<a href=\"https://www.actionnetwork.org/fundraising/help-immigrants-held-by-ice-donate-to-yuba-mesa-verde-support-fund\" target=\"_blank\">link</a>) to the Yuba County Jail and Mesa Verde donation fund, which helps immigrants in ICE detention and in their struggle after they are released or deported. If you can host a person who has been released from immigration detention, would like to become a penpal to someone detained, or have any other ideas of how to support this fight, write to us at <strong>info@ccijustice.org</strong>"
+    }
+
+  }
+
+}

@@ -2,6 +2,8 @@ export class Campaign {
     id: number;
     name: string;
     translations : {};
+    videos: Array<Object>;
+    text: string;
     actions: {};
   
 

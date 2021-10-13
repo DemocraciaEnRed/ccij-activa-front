@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { MainComponent } from '../pages/main/main.component';
 import { ProjectViewComponent } from '../pages/project-view/project-view.component';
-import { FullListComponent } from '../pages/full-list/full-list.component';
+// import { FullListComponent } from '../pages/full-list/full-list.component';
 import { PoliticianSliderComponent } from '../components/politician-slider/politician-slider.component';
 import { FaqsComponent } from '../pages/faqs/faqs.component';
 
@@ -11,6 +11,6 @@ export const AppRoutes = [
     { path: "proyecto/:id", component: PoliticianSliderComponent,outlet:'comunicaciones' },
 
     { path: "faqs", component: FaqsComponent },
-    { path: "lista/:id", component: FullListComponent },
+    // { path: "lista/:id", component: FullListComponent },
     { path: '**', redirectTo: '' }
 ];

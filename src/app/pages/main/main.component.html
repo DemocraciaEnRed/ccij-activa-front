@@ -40,7 +40,7 @@
     
     <h1 class="title text-center bg-azul-claro p-4">{{'MAIN.PROJECTS.TITLE' | translate}}</h1>
     <div class="dialog-triangle"></div>
-    <div *ngIf="projectList || projectList === 0; else elseBlock" class="container">
+    <div *ngIf="projectList || projectList.length === 0; else elseBlock" class="container">
         <!-- Proyectos -->
         <div class="row">
             

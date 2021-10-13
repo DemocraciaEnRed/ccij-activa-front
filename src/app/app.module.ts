@@ -19,7 +19,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HeaderHeroComponent } from './components/header-hero/header-hero.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ComponentsModule } from './components/components.module';
-import { FullListModule } from './pages/full-list/full-list.module';
+// import { FullListModule } from './pages/full-list/full-list.module';
 import { AppRoutes } from './helpers/routes.helper';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -69,7 +69,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormsModule,
     CommonModule,
     HttpModule,
-    FullListModule,
+    // FullListModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
